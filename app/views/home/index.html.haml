@@ -1,4 +1,23 @@
 #home.container
   .row
     .col-lg-12
-      Home
+      %h1.name= Setting.first.name
+
+  .row
+    .col-lg-12
+      %h2.description= Setting.first.description
+
+  .row
+    .col-lg-12
+      %section.contact
+        = Setting.first.email
+        \|
+        = Setting.first.phone
+        \|
+        = Setting.first.address
+
+
+  .row
+    .col-lg-12
+      %section.projects
+        = render 'projects', collection: @projects

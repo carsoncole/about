@@ -1,0 +1,40 @@
+= form_for @setting do |f|
+  - if @setting.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@setting.errors.count, "error")} prohibited this setting from being saved:"
+      %ul
+        - @setting.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :name
+        = f.text_field :name, class: 'form-control'
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :description
+        = f.text_field :description, class: 'form-control'
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :address
+        = f.text_field :address, class: 'form-control'
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :email
+        = f.text_field :email, class: 'form-control'
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :phone
+        = f.text_field :phone, class: 'form-control'
+
+  .actions
+    = f.submit 'Save', class: 'btn btn-primary'
