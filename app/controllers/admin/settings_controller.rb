@@ -1,4 +1,4 @@
-class SettingsController < ApplicationController
+class Admin::SettingsController < Admin::AdminController
   before_action :set_setting, only: %i[ show edit update destroy ]
 
   # GET /settings or /settings.json

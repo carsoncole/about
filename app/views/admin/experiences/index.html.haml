@@ -1,0 +1,22 @@
+%h1 Experiences
+
+%table
+
+
+  %tbody
+    - @admin_experiences.each do |admin_experience|
+      %tr
+        %td= admin_experience.title
+        %td= admin_experience.name
+        %td= admin_experience.url
+        %td= admin_experience.start_date
+        %td= admin_experience.end_date
+        %td= admin_experience.description
+        %td= admin_experience.order
+        %td= link_to 'Show', admin_experience
+        %td= link_to 'Edit', edit_admin_experience_path(admin_experience)
+        %td= link_to 'Destroy', admin_experience, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Experience', new_admin_experience_path

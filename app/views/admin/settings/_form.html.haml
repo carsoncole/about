@@ -1,4 +1,4 @@
-= form_for @setting do |f|
+= form_for [:admin, @setting] do |f|
   - if @setting.errors.any?
     #error_explanation
       %h2= "#{pluralize(@setting.errors.count, "error")} prohibited this setting from being saved:"
@@ -13,7 +13,7 @@
         = f.text_field :name, class: 'form-control'
 
   .row
-    .col-lg-8
+    .col-lg-12
       .form-group.mb-5
         .mb-3= f.label :description
         = f.text_field :description, class: 'form-control'

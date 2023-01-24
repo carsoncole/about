@@ -1,0 +1,31 @@
+= form_for @admin_experience do |f|
+  - if @admin_experience.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_experience.errors.count, "error")} prohibited this admin_experience from being saved:"
+      %ul
+        - @admin_experience.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :start_date
+    = f.text_field :start_date
+  .field
+    = f.label :end_date
+    = f.text_field :end_date
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :order
+    = f.number_field :order
+  .actions
+    = f.submit 'Save'

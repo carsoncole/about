@@ -1,6 +1,13 @@
 %footer.container
-  %p
-    Source:
-    = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git"
+  Source:
+  = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git", target: '_blank'
+  - if signed_in?
+    \|
+    = link_to "Settings", edit_admin_setting_path(Setting.first) unless Setting.first.nil?
 
-  = link_to "Settings", edit_setting_path(Setting.first) unless Setting.first.nil?
+  .copyright
+    Copyright
+    %i.bi.bi-c-circle
+    = Date.today.year
+    Carson R Cole
+
