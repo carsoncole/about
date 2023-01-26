@@ -11,4 +11,4 @@ A full set of sample seed data is available. To load the data:
 
 ## Copyright
 
-Copyright (c) 2022, 2023 (Carson Cole)[https://carsonrcole.com]. See MIT-LICENSE for details.
+Copyright (c) 2022, 2023 [Carson Cole](https://carsonrcole.com). See MIT-LICENSE for details.
