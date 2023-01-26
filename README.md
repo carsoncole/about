@@ -9,3 +9,6 @@ A full set of sample seed data is available. To load the data:
 
     % rails db:seed
 
+## Copyright
+
+Copyright (c) 2022, 2023 (Carson Cole)[https://carsonrcole.com]. See MIT-LICENSE for details.
