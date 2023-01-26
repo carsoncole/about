@@ -10,10 +10,21 @@ body {
 }
 
 #home {
+  h1 {
+    &.name {
+      font-size: 4.5em;
+      margin-bottom: 0;
+    }
+  }
+  section.contact {
+    margin-bottom: 3em;
+  }
 }
 
-h1.name {
-  font-size: 4.5em;
+h1 {
+  margin-bottom: 2em;
+  font-size: 3.5em;
+
 }
 
 footer {
@@ -25,6 +36,7 @@ a, ul.nav a {
   color: lighten(rgb(13, 110, 253), 30%);
   text-decoration: none;
 }
+
 
 .copyright {
   border-top: 1px solid darken(#ffffff, 60%);

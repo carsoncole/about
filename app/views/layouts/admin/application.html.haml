@@ -20,10 +20,11 @@
             = link_to root_path, class: 'nav-link' do
               %i.bi.bi-house
               Home
-          %li.nav-item
-            = link_to edit_admin_setting_path(Setting.first), class: 'nav-link' do
-              %i.bi.bi-gear
-              Settings
+          - unless Setting.first.nil?
+            %li.nav-item
+              = link_to edit_admin_setting_path(Setting.first), class: 'nav-link' do
+                %i.bi.bi-gear
+                Settings
           %li.nav-item
             = link_to admin_projects_path, class: 'nav-link' do
               %i.bi.bi-code-square

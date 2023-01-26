@@ -1,9 +1,9 @@
 class Admin::ExperiencesController < Admin::AdminController
-  before_action :set_admin_experience, only: %i[ show edit update destroy ]
+  before_action :set_experience, only: %i[ show edit update destroy ]
 
   # GET /admin/experiences or /admin/experiences.json
   def index
-    @admin_experiences = Admin::Experience.all
+    @experiences = Experience.all
   end
 
   # GET /admin/experiences/1 or /admin/experiences/1.json
@@ -12,7 +12,7 @@ class Admin::ExperiencesController < Admin::AdminController
 
   # GET /admin/experiences/new
   def new
-    @admin_experience = Admin::Experience.new
+    @experience = Experience.new
   end
 
   # GET /admin/experiences/1/edit
@@ -21,15 +21,15 @@ class Admin::ExperiencesController < Admin::AdminController
 
   # POST /admin/experiences or /admin/experiences.json
   def create
-    @admin_experience = Admin::Experience.new(admin_experience_params)
+    @experience = Experience.new(experience_params)
 
     respond_to do |format|
-      if @admin_experience.save
-        format.html { redirect_to admin_experience_url(@admin_experience), notice: "Experience was successfully created." }
-        format.json { render :show, status: :created, location: @admin_experience }
+      if @experience.save
+        format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully created." }
+        format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @admin_experience.errors, status: :unprocessable_entity }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +37,19 @@ class Admin::ExperiencesController < Admin::AdminController
   # PATCH/PUT /admin/experiences/1 or /admin/experiences/1.json
   def update
     respond_to do |format|
-      if @admin_experience.update(admin_experience_params)
-        format.html { redirect_to admin_experience_url(@admin_experience), notice: "Experience was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_experience }
+      if @experience.update(experience_params)
+        format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully updated." }
+        format.json { render :show, status: :ok, location: @experience }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_experience.errors, status: :unprocessable_entity }
+        format.json { render json: @experience.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /admin/experiences/1 or /admin/experiences/1.json
   def destroy
-    @admin_experience.destroy
+    @experience.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_experiences_url, notice: "Experience was successfully destroyed." }
@@ -59,12 +59,12 @@ class Admin::ExperiencesController < Admin::AdminController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_experience
-      @admin_experience = Admin::Experience.find(params[:id])
+    def set_experience
+      @experience = Experience.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def admin_experience_params
-      params.require(:admin_experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order)
+    def experience_params
+      params.require(:experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order, :experience)
     end
 end

@@ -1,21 +1,25 @@
 #home.container
   .row
     .col-lg-12
-      %h1.name= Setting.first.name
+      %h1.name= Setting&.first&.name || 'Name'
 
   .row
     .col-lg-12
-      %h2.description= Setting.first.description
+      %h2.description= Setting&.first&.description || 'Description'
 
   .row
     .col-lg-12
       %section.contact
-        = Setting.first.email
+        = Setting&.first&.email || 'email'
         \|
-        = Setting.first.phone
+        = Setting&.first&.phone || 'phone'
         \|
-        = Setting.first.address
+        = Setting&.first&.address || 'address'
 
+  .row
+    .col-lg-12
+      %section.experiences
+        = render partial: 'experience', collection: @experiences
 
   .row
     .col-lg-12

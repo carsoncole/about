@@ -1,0 +1,16 @@
+%article.experience
+  .title= experience.title
+  .name
+    - if experience.url.present?
+      = link_to experience.name, experience.url
+    - else
+      = experience.name
+  .dates
+    = experience.start_date.strftime('%b %-m, %Y') + ' - ' + experience&.end_date&.strftime('%b %-m, %Y') || 'present'
+
+  .description=experience.description
+
+  - if SKILLS_DISPLAYED
+    .skills
+      - experience.skill_list.each do |skill|
+        .skill= skill

@@ -4,18 +4,18 @@
 
 
   %tbody
-    - @admin_experiences.each do |admin_experience|
+    - @experiences.each do |experience|
       %tr
-        %td= admin_experience.title
-        %td= admin_experience.name
-        %td= admin_experience.url
-        %td= admin_experience.start_date
-        %td= admin_experience.end_date
-        %td= admin_experience.description
-        %td= admin_experience.order
-        %td= link_to 'Show', admin_experience
-        %td= link_to 'Edit', edit_admin_experience_path(admin_experience)
-        %td= link_to 'Destroy', admin_experience, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= experience.title
+        %td= experience.name
+        %td= experience.url
+        %td= experience.start_date
+        %td= experience.end_date
+        %td= experience.description
+        %td= experience.order
+        %td= link_to 'Show', admin_experience_path(experience)
+        %td= link_to 'Edit', edit_admin_experience_path(experience)
+        %td= link_to 'Destroy', admin_experience_path(experience), method: :delete, data: { 'turbo-method': :delete, confirm: 'Are you sure?' }
 
 %br
 

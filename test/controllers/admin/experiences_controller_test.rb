@@ -11,39 +11,44 @@ class Admin::ExperiencesControllerTest < ActionDispatch::IntegrationTest
     assert_response :unauthorized
   end
 
-  # test "should get new" do
-  #   get new_admin_experience_url
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get new_admin_experience_url, headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    assert_response :success
+  end
 
-  # test "should create admin_experience" do
-  #   assert_difference("Admin::Experience.count") do
-  #     post admin_experiences_url, params: { admin_experience: { description: @admin_experience.description, end_date: @admin_experience.end_date, name: @admin_experience.name, order: @admin_experience.order, start_date: @admin_experience.start_date, title: @admin_experience.title, url: @admin_experience.url } }
-  #   end
+  test "should create experience" do
+    assert_difference("Experience.count") do
+      post admin_experiences_url, params: { experience: attributes_for(:experience) }, headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    end
 
-  #   assert_redirected_to admin_experience_url(Admin::Experience.last)
-  # end
+    assert_redirected_to admin_experience_url(Experience.last)
+  end
 
-  # test "should show admin_experience" do
-  #   get admin_experience_url(@admin_experience)
-  #   assert_response :success
-  # end
+  test "should show admin_experience" do
+    experience = create(:experience)
+    get admin_experience_url(experience), headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    assert_response :success
+  end
 
-  # test "should get edit" do
-  #   get edit_admin_experience_url(@admin_experience)
-  #   assert_response :success
-  # end
+  test "should get edit" do
+    experience = create(:experience)
+    get edit_admin_experience_url(experience), headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    assert_response :success
+  end
 
-  # test "should update admin_experience" do
-  #   patch admin_experience_url(@admin_experience), params: { admin_experience: { description: @admin_experience.description, end_date: @admin_experience.end_date, name: @admin_experience.name, order: @admin_experience.order, start_date: @admin_experience.start_date, title: @admin_experience.title, url: @admin_experience.url } }
-  #   assert_redirected_to admin_experience_url(@admin_experience)
-  # end
+  test "should update admin_experience" do
+    experience = create(:experience)
+    patch admin_experience_url(experience), params: { experience: { description: 'new description' } }, headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    assert_redirected_to admin_experience_url(experience)
+    assert_equal 'new description', experience.reload.description
+  end
 
-  # test "should destroy admin_experience" do
-  #   assert_difference("Admin::Experience.count", -1) do
-  #     delete admin_experience_url(@admin_experience)
-  #   end
+  test "should destroy admin_experience" do
+    experience = create(:experience)
+    assert_difference("Experience.count", -1) do
+      delete admin_experience_url(experience), headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    end
 
-  #   assert_redirected_to admin_experiences_url
-  # end
+    assert_redirected_to admin_experiences_url
+  end
 end
