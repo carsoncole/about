@@ -16,7 +16,8 @@
     .mb-2= f.label :description
     = f.text_area :description, class: 'form-control', rows: 10
   .form-group.mb-3
-    .mb-2= f.label :image_url
+    = f.label :image_name_and_extension
+    .mb-2.text-muted Images should be saved in 'app/assets/images'
     = f.text_field :image_url, class: 'form-control'
   .form-group.mb-3
     .mb-2= f.label :working_url

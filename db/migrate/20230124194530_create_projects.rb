@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :image_url
       t.string :working_url
-      t.integer :order
+      t.integer :order, default: 0, nil: false
 
       t.timestamps
     end
