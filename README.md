@@ -20,4 +20,4 @@ About uses Minitest for its test coverage. Inside the root app directory you can
 
 ## Copyright
 
-Copyright (c) 2023 [Carson Cole](https://carsonrcole.com). See ['LICENSE'](/LICENSE) for details.
+Copyright (c) 2023 [Carson Cole](https://carsonrcole.com). See [LICENSE](/LICENSE) for details.
