@@ -18,3 +18,9 @@ Experience.destroy_all
     e.save
   end
 end
+
+# projects
+Project.destroy_all
+Project.create(source_url: 'https://github.com/rails/rails', name: 'Ruby on Rails', description: 'Rails is a web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.', image_url: 'ror.png')
+create_list(:full_project, 5)
+

@@ -7,28 +7,33 @@
           %li= message
 
   .form-group.mb-3
-    = f.label :title
+    .mb-2= f.label :title
     = f.text_field :title, class: 'form-control'
   .form-group.mb-3
-    = f.label :name
+    .mb-2= f.label :employer
     = f.text_field :name, class: 'form-control'
   .form-group.mb-3
-    = f.label :url
+    .mb-2= f.label :employer_url
     = f.text_field :url, class: 'form-control'
-  .form-group.mb-3
-    = f.label :start_date
-    = f.text_field :start_date, class: 'form-control'
-  .form-group.mb-3
-    = f.label :end_date
-    = f.text_field :end_date, class: 'form-control'
+  .row
+    .col-lg-5
+      .form-group.mb-3
+        .mb-2= f.label :start_date
+        = f.text_field :start_date, class: 'form-control'
+      .form-group.mb-3
+        .mb-2= f.label :end_date
+        = f.text_field :end_date, class: 'form-control'
   .form-group.mb-3
     = f.label :skillset
+    .text-muted.mb-2 Skills, comma-separated
     = f.text_field :skillset, class: 'form-control'
   .form-group.mb-3
-    = f.label :description
-    = f.text_area :description, class: 'form-control'
-  .form-group.mb-5
-    = f.label :order
-    = f.number_field :order, class: 'form-control'
+    .mb-2= f.label :description
+    = f.text_area :description, class: 'form-control', rows: 10
+  .row
+    .col-lg-2
+      .form-group.mb-5
+        = f.label :order
+        = f.number_field :order, class: 'form-control'
   .actions
     = f.submit 'Save', class: 'btn btn-primary'

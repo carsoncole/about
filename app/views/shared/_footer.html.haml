@@ -3,7 +3,7 @@
   = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git", target: '_blank'
   - if signed_in? && !Setting.first.nil?
     \|
-    = link_to "Settings", edit_admin_setting_path(Setting.first) unless Setting.first.nil?
+    = link_to "Admin", admin_experiences_path unless Setting.first.nil?
 
   .copyright
     Copyright

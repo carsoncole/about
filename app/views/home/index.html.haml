@@ -16,12 +16,17 @@
         \|
         = Setting&.first&.address || 'address'
 
-  .row
-    .col-lg-12
-      %section.experiences
-        = render partial: 'experience', collection: @experiences
-
-  .row
-    .col-lg-12
+  - if PROJECTS_DISPLAYED
+    .row
       %section.projects
-        = render 'project', collection: @projects
+        %h2 Open-Source Projects
+        .carousel
+          = render partial: 'projects/project', collection: @projects
+
+  - if EXPERIENCES_DISPLAYED
+    .row
+      .col-lg-12
+        %section.experiences
+          %h2 Experience
+          = render partial: 'experience', collection: @experiences
+

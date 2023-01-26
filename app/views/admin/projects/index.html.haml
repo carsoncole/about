@@ -1,6 +1,6 @@
 %h1 Projects
 
-%table
+%table.table.projects
 
 
   %tbody
@@ -8,13 +8,10 @@
       %tr
         %td= project.name
         %td= project.source_url
-        %td= project.description
-        %td= project.image_url
-        %td= project.working_url
-        %td= project.order
-        %td= link_to 'Show', admin_project_path(project)
-        %td= link_to 'Edit', edit_admin_project_path(project)
-        %td= link_to 'Destroy', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }
+        %td.actions
+          = link_to 'Show', admin_project_path(project)
+          = link_to 'Edit', edit_admin_project_path(project)
+          = link_to 'Destroy', admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

@@ -1,9 +1,8 @@
 class Admin::ExperiencesController < Admin::AdminController
   before_action :set_experience, only: %i[ show edit update destroy ]
 
-  # GET /admin/experiences or /admin/experiences.json
   def index
-    @experiences = Experience.all
+    @experiences = Experience.order(:order)
   end
 
   # GET /admin/experiences/1 or /admin/experiences/1.json
@@ -40,18 +39,18 @@ class Admin::ExperiencesController < Admin::AdminController
 
   # PATCH/PUT /admin/experiences/1 or /admin/experiences/1.json
   def update
-    respond_to do |format|
-      if @experience.update(experience_params)
-        if @experience.skillset.present?
-          @experience.skill_list.add(@experience.skillset, parse: true)
-          @experience.save
-        end
-        format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully updated." }
-        format.json { render :show, status: :ok, location: @experience }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+    if @experience.update(experience_params)
+      if @experience.skillset.present?
+        @experience.skill_list.add(@experience.skillset, parse: true)
+        @experience.save
       end
+      if params[:index]
+        redirect_to admin_experiences_url
+      else
+        redirect_to admin_experience_url(@experience), notice: "Experience was successfully updated."
+      end
+    else
+      ender :edit, status: :unprocessable_entity
     end
   end
 

@@ -2,6 +2,7 @@ article.experience {
   margin-bottom: 2em;
   border-top: 1px solid darken(#ffffff, 50%);
   &:first-of-type {
+    padding-top: 0;
     border: none;
   }
   padding-top: 1em;
@@ -25,5 +26,13 @@ article.experience {
     margin: 0 0.1em;
     vertical-align: middle;
 
+  }
+}
+
+table.experiences {
+  th, td {
+    &.actions {
+      text-align: right;
+    }
   }
 }

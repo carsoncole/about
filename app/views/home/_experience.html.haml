@@ -6,7 +6,7 @@
     - else
       = experience.name
   .dates
-    = experience.start_date.strftime('%b %-m, %Y') + ' - ' + experience&.end_date&.strftime('%b %-m, %Y') || 'present'
+    = date_range(experience.start_date, experience.end_date)
 
   .description=experience.description
 

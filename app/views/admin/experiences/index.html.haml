@@ -1,21 +1,24 @@
-%h1 Experiences
+.row
+  .col-lg-12
+    %h1 Experiences
 
-%table
-
-
-  %tbody
-    - @experiences.each do |experience|
-      %tr
-        %td= experience.title
-        %td= experience.name
-        %td= experience.url
-        %td= experience.start_date
-        %td= experience.end_date
-        %td= experience.description
-        %td= experience.order
-        %td= link_to 'Show', admin_experience_path(experience)
-        %td= link_to 'Edit', edit_admin_experience_path(experience)
-        %td= link_to 'Destroy', admin_experience_path(experience), method: :delete, data: { 'turbo-method': :delete, confirm: 'Are you sure?' }
+.row
+  .col-lg-12
+    %table.table.experiences
+      %tbody
+        - @experiences.each do |experience|
+          %tr
+            %td= experience.title
+            %td= experience.name
+            %td= date_range(experience.start_date, experience.end_date)
+            %td.actions
+              = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order - 1}}), method: :patch, data: { 'turbo-method': :patch } do
+                %i.bi.bi-arrow-up
+              = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order + 1}}), method: :patch, data: { 'turbo-method': :patch } do
+                %i.bi.bi-arrow-down
+              = link_to 'Show', admin_experience_path(experience)
+              = link_to 'Edit', edit_admin_experience_path(experience)
+              = link_to 'Destroy', admin_experience_path(experience), method: :delete, data: { 'turbo-method': :delete, confirm: 'Are you sure?' }
 
 %br
 

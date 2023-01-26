@@ -1,24 +1,7 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @project.name
-%p
-  %b Source url:
-  = @project.source_url
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Image url:
-  = @project.image_url
-%p
-  %b Working url:
-  = @project.working_url
-%p
-  %b Order:
-  = @project.order
+= render 'project'
 
-= link_to 'Edit', edit_project_path(@project)
+= link_to 'Edit', edit_admin_project_path(@project)
 \|
-= link_to 'Back', projects_path
+= link_to 'Back', admin_projects_path
