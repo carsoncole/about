@@ -25,6 +25,10 @@ class Admin::ExperiencesController < Admin::AdminController
 
     respond_to do |format|
       if @experience.save
+        if @experience.skillset.present?
+          @experience.skill_list.add(@experience.skillset, parse: true)
+          @experience.save
+        end
         format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully created." }
         format.json { render :show, status: :created, location: @experience }
       else
@@ -38,6 +42,10 @@ class Admin::ExperiencesController < Admin::AdminController
   def update
     respond_to do |format|
       if @experience.update(experience_params)
+        if @experience.skillset.present?
+          @experience.skill_list.add(@experience.skillset, parse: true)
+          @experience.save
+        end
         format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully updated." }
         format.json { render :show, status: :ok, location: @experience }
       else
@@ -65,6 +73,6 @@ class Admin::ExperiencesController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def experience_params
-      params.require(:experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order, :experience)
+      params.require(:experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order, :experience, :skillset)
     end
 end
