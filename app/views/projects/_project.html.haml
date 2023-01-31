@@ -1,7 +1,7 @@
 
 .project-panel
   .project
-    .name= project.name
+    .name= link_to project.name, project
     .source-url= link_to project.source_url, project.source_url
 
     - if project.image_url.present?

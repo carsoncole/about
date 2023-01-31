@@ -23,6 +23,15 @@
         .carousel
           = render partial: 'projects/project', collection: @projects
 
+  - if SKILLSETS_DISPLAYED
+    .row
+      .col-lg-12
+        %section.skillsets
+          %h2 Skills
+
+          - @tags.each do |tag|
+            .skill= tag.name
+
   - if EXPERIENCES_DISPLAYED
     .row
       .col-lg-12

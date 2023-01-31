@@ -16,16 +16,24 @@ article.experience {
   .name {
     margin-right: 1.5em;
   }
-  .skill {
-    display: inline-block;
-    background-color: lighten(#191970, 10%);
-    border-radius: 3px;
-    padding: 0.05em 0.3em;
-    line-height: 1.3;
-    font-size: 0.8em;
-    margin: 0 0.1em;
-    vertical-align: middle;
 
+}
+
+.skill {
+  display: inline-block;
+  background-color: lighten(#191970, 10%);
+  border-radius: 3px;
+  padding: 0.03em 0.5em;
+  line-height: 1.5;
+  font-size: 0.8em;
+  margin: 0.2em 0.2em;
+  vertical-align: middle;
+}
+
+.skillsets {
+  .skill {
+    font-size: 1em;
+    font-weight: 900;
   }
 }
 

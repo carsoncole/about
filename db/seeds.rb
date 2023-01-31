@@ -2,7 +2,7 @@ include FactoryBot::Syntax::Methods
 
 # settings
 Setting.destroy_all
-Setting.create(name: Faker::Name.name, description: Faker::Lorem.paragraph(sentence_count: 3), address: Faker::Address.city + ', ' + Faker::Address.state, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone )
+Setting.create(name: Faker::Name.name, description: Faker::Lorem.paragraph(sentence_count: 4), address: Faker::Address.city + ', ' + Faker::Address.state, email: Faker::Internet.email, phone: Faker::PhoneNumber.cell_phone )
 
 # skills
 skills = %w(Ruby\ on\ Rails\ 7 PostgreSQL Digital\ Ocean Heroku Redis APIs Microservices Salesforce Twilio Chargebee Terraform Ansible Fly.io AWS)

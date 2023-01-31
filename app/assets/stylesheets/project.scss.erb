@@ -1,3 +1,5 @@
+$background-color: <%= BACKGROUND_COLOR %>;
+
 table.projects {
   th, td {
     &.actions {
@@ -9,10 +11,10 @@ table.projects {
 
 .project-panel {
    display: inline-block;
-  width: 500px;
-  height: 400px;
+  width: 700px;
+  height: 500px;
   word-wrap: break-word;
-  background-color: lighten(#191970, 0%);
+  background-color: lighten($background-color, 4%);
   border-radius: 4px;
   margin-right: 2em;
   margin-bottom: 2em;
