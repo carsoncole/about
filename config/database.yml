@@ -19,6 +19,6 @@ test:
 
 production:
   <<: *default
-  database: about-
+  database: carsonrcole-production
   username: <%= Rails.application.credentials.postgresql.production.username %>
-  password:   <%= Rails.application.credentials.postgresql.production.password %>
+  password: <%= Rails.application.credentials.postgresql.production.password %>
