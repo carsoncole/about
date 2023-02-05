@@ -52,6 +52,7 @@ gem "sassc-rails"
 gem "haml-rails"
 gem 'bootstrap'
 gem 'acts-as-taggable-on'
+gem "clearance"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -3,16 +3,17 @@ require "test_helper"
 class Admin::SettingsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @setting = create(:setting)
+    @admin = create(:admin)
   end
 
   test "should get index" do
-    get edit_admin_setting_url(@setting), headers: { Authorization: ActionController::HttpAuthentication::Basic.encode_credentials('name', 'password')}
+    get edit_admin_setting_url(@setting, as: @admin)
     assert_response :success
   end
 
   test "should not get index" do
     get edit_admin_setting_url(@setting)
-    assert_response :unauthorized
+    assert_redirected_to :sign_in
   end
 
   # test "should get new" do

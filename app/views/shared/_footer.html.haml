@@ -1,10 +1,16 @@
 %footer.container
+
+  %ul.nav.justify-content-center
+    - if signed_in?
+      %li.nav-item
+        = link_to "Admin", admin_experiences_path, class: 'nav-link' unless Setting.first.nil?
+
+      %li.nav-item= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link', method: :delete
+    - else
+      %li.nav-item= link_to "Sign in", sign_in_path, class: 'nav-link'
+
   Source:
   = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git", target: '_blank'
-  - if signed_in? && !Setting.first.nil?
-    \|
-    = link_to "Admin", admin_experiences_path unless Setting.first.nil?
-
   .copyright
     Copyright
     %i.bi.bi-c-circle
