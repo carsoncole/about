@@ -3,9 +3,12 @@
   %ul.nav.justify-content-center
     - if signed_in?
       %li.nav-item
-        = link_to "Admin", admin_experiences_path, class: 'nav-link' unless Setting.first.nil?
+        - if Setting.first
+          = link_to "Admin", admin_experiences_path, class: 'nav-link'
+        - else
+          = link_to "Settings", new_admin_setting_path, class: 'nav-link'
 
-      %li.nav-item= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link', method: :delete
+      %li.nav-item= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link'
     - else
       %li.nav-item= link_to "Sign in", sign_in_path, class: 'nav-link'
 

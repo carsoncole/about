@@ -22,4 +22,4 @@ production:
   database: carsonrcole-production
   username: <%= Rails.application.credentials.postgresql.production.username %>
   password: <%= Rails.application.credentials.postgresql.production.password %>
-  host: <%= Rails.application.credentials.postgresql.production.host %>
+  host: XXXXX-db.internal
