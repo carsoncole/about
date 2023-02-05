@@ -1,14 +1,15 @@
 module ApplicationHelper
-  def date_range(start_date, end_date)
-    date = start_date.strftime('%b %-m, %Y')
-  end
-
   def nice_date(date)
-    return nil if nil
-    date.strftime('%b %-m, %Y')
+    return nil if date.nil?
+    date.strftime('%b %-d, %Y')
+  end
+
+  def compact_date(date)
+    return nil if date.nil?
+    date.strftime('%b %Y')
   end
 
   def date_range(start_date, end_date)
-    nice_date(start_date) + ' - ' + nice_date(end_date) || 'present'
+    (compact_date(start_date) || '' ) + ' - ' + (compact_date(end_date) || 'present')
   end
 end

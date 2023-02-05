@@ -25,7 +25,7 @@ class Admin::ExperiencesControllerTest < ActionDispatch::IntegrationTest
       post admin_experiences_url(as: @admin), params: { experience: attributes_for(:experience) }
     end
 
-    assert_redirected_to admin_experience_url(Experience.last)
+    assert_redirected_to admin_experiences_url
   end
 
   test "should show admin_experience" do
@@ -43,7 +43,7 @@ class Admin::ExperiencesControllerTest < ActionDispatch::IntegrationTest
   test "should update admin_experience" do
     experience = create(:experience)
     patch admin_experience_url(experience, as: @admin), params: { experience: { description: 'new description' } }
-    assert_redirected_to admin_experience_url(experience)
+    assert_redirected_to admin_experiences_url
     assert_equal 'new description', experience.reload.description
   end
 

@@ -28,7 +28,7 @@ class Admin::ExperiencesController < Admin::AdminController
           @experience.skill_list.add(@experience.skillset, parse: true)
           @experience.save
         end
-        format.html { redirect_to admin_experience_url(@experience), notice: "Experience was successfully created." }
+        format.html { redirect_to admin_experiences_url, notice: "Experience was successfully created." }
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -47,7 +47,7 @@ class Admin::ExperiencesController < Admin::AdminController
       if params[:index]
         redirect_to admin_experiences_url
       else
-        redirect_to admin_experience_url(@experience), notice: "Experience was successfully updated."
+        redirect_to admin_experiences_url, notice: "Experience was successfully updated."
       end
     else
       ender :edit, status: :unprocessable_entity
