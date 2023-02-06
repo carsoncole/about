@@ -1,0 +1,18 @@
+%h1 Educations
+
+%table.table.projects
+
+
+  %tbody
+    - @educations.each do |education|
+      %tr
+        %td= education.name
+        %td= education.title
+        %td.actions
+          = link_to 'Show', admin_education_path(education)
+          = link_to 'Edit', edit_admin_education_path(education)
+          = link_to 'Destroy', admin_education_path(education), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Education', new_admin_education_path

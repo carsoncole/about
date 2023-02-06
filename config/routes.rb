@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   resources :projects, only: :show
 
   namespace :admin do
-    resources :settings, :projects, :experiences
+    resources :settings, :projects, :experiences, :educations
   end
 end
