@@ -1,0 +1,61 @@
+%header
+  %h1= Setting&.first&.name|| 'Your name here'
+  .bio-description= Setting&.first&.description
+
+
+- if Setting&.first&.status.present?
+  #status.section
+    %h2 Status
+    .content
+      = Setting&.first&.status
+
+#contact.section
+  %h2 Contact
+  .content
+    .phone= Setting&.first&.phone || '+1 206-555-1212'
+    .email= Setting&.first&.email || 'john.doe@example.com'
+    .address= Setting&.first&.address || '123 Main Street, Anytown, 11111 USA'
+
+
+#experience.section
+  %h2 Experience
+
+  - @experiences.each do |experience|
+    %article
+      .title
+        %h3= experience.title
+        .name
+          - if experience.url.present?
+            = link_to experience.name, experience.url
+          - else
+            = experience.name
+
+      .content
+        - if experience.skills.present?
+          .skills= experience.skill_list
+
+        .description
+          = experience.description
+
+        .period
+          = experience.start_date.strftime('%B %Y')
+          \-
+          - if experience.end_date.present?
+            = experience.end_date.strftime('%B %Y')
+          - else
+            Present
+
+
+- if Education.all.any?
+  #education.section
+    %h2 Education
+    - Education.all.each do |education|
+      .content
+        = education.title
+
+
+.status
+  Generated:
+  = Time.now
+  &nbsp; | &nbsp;
+  = link_to "Generate current version", resume_path(format: :pdf)

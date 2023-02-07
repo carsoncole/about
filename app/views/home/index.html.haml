@@ -46,3 +46,9 @@
         = render partial: 'education', collection: @educations
 
 
+
+  .row
+    .col-md-12
+      .resume-link
+        = link_to "Download Resume", resume_path(format: :pdf), target: '_blank'
+        %i.far.fa-arrow-alt-circle-down

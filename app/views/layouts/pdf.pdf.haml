@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta(charset='utf-8')
+    = wicked_pdf_stylesheet_link_tag "pdf"
+    = javascript_include_tag "https://kit.fontawesome.com/a5cd6aa43c.js"
+
+  %body
+    #content
+      = yield

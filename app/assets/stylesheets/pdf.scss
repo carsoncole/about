@@ -1,0 +1,77 @@
+$dim: #aaaaaa;
+$border: rgb(210, 210, 215);
+
+body {
+  font-size: 14px;
+  font-family: "SF Pro Display", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+header {
+  text-align: center;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 1.8rem 8rem;
+  margin-bottom: 2rem;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+}
+
+.section {
+  -webkit-font-smoothing: antialiased;
+  border-top: 1px solid $border;
+  padding-top: 12px;
+  margin-bottom: 2.1rem;
+}
+
+
+h2 {
+  font-size: 1rem !important;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+}
+
+.content {
+  margin-left: 3rem;
+}
+
+article {
+  margin-bottom: 20px;
+  padding-left: 1rem;
+  .title {
+    width: 100%;
+    margin-bottom: 8px;
+    h3 {
+      margin: 0 1em 0 0;
+    }
+    h3, .name {
+      display: inline;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+  .skills, .period {
+    font-size: 0.85em;
+    color: $dim;
+  }
+  .skills, .period, .description {
+    margin-bottom: 8px;
+  }
+}
+.status {
+  margin-top: 24px;
+  font-size: 0.85em;
+  color: $dim;
+  display: inline-block;
+  width: 100%
+}
