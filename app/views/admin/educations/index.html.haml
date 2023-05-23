@@ -1,4 +1,4 @@
-%h1 Educations
+%h1 Education
 
 %table.table.projects
 
@@ -11,7 +11,7 @@
         %td.actions
           = link_to 'Show', admin_education_path(education)
           = link_to 'Edit', edit_admin_education_path(education)
-          = link_to 'Destroy', admin_education_path(education), method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'Destroy', admin_education_path(education), method: :delete, data: { "turbo-method": :delete, confirm: 'Are you sure?' }
 
 %br
 
