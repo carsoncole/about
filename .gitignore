@@ -39,3 +39,5 @@ fly.toml
 Dockerfile
 .dockerignore
 
+
+/config/credentials/development.key
