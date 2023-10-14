@@ -1,25 +1,17 @@
+
 default: &default
-  host: localhost
-  adapter: postgresql
+  adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  encoding: unicode
   timeout: 5000
 
 development:
   <<: *default
-  database: about-development
-  username: carsoncole
-  password: password
+  database: storage/about-development.sqlite3
 
 test:
   <<: *default
-  database: about-test
-  username: carsoncole
-  password: password
+  database: storage/about-test.sqlite3
 
 production:
   <<: *default
-  database: carsonrcole-production
-  username: <%= Rails.application.credentials.postgresql.production.username %>
-  password: <%= Rails.application.credentials.postgresql.production.password %>
-  host: <%= Rails.application.credentials.postgresql.production.host %>
+  database: storage/about-production.sqlite3

@@ -1,15 +1,17 @@
-# frozen_string_literal: true
-
 # This migration comes from acts_as_taggable_on_engine (originally 1)
-class ActsAsTaggableOnMigration < ActiveRecord::Migration[6.0]
+if ActiveRecord.gem_version >= Gem::Version.new('5.0')
+  class ActsAsTaggableOnMigration < ActiveRecord::Migration[4.2]; end
+else
+  class ActsAsTaggableOnMigration < ActiveRecord::Migration; end
+end
+ActsAsTaggableOnMigration.class_eval do
   def self.up
-    create_table ActsAsTaggableOn.tags_table do |t|
+    create_table :tags do |t|
       t.string :name
-      t.timestamps
     end
 
-    create_table ActsAsTaggableOn.taggings_table do |t|
-      t.references :tag, foreign_key: { to_table: ActsAsTaggableOn.tags_table }
+    create_table :taggings do |t|
+      t.references :tag
 
       # You should make sure that the column created is
       # long enough to store the required class names.
@@ -23,12 +25,12 @@ class ActsAsTaggableOnMigration < ActiveRecord::Migration[6.0]
       t.datetime :created_at
     end
 
-    add_index ActsAsTaggableOn.taggings_table, %i[taggable_id taggable_type context],
-              name: 'taggings_taggable_context_idx'
+    add_index :taggings, :tag_id
+    add_index :taggings, [:taggable_id, :taggable_type, :context]
   end
 
   def self.down
-    drop_table ActsAsTaggableOn.taggings_table
-    drop_table ActsAsTaggableOn.tags_table
+    drop_table :taggings
+    drop_table :tags
   end
 end
