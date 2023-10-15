@@ -4,7 +4,9 @@ Personal portfolio Ruby on Rails application, highlighting some of the newest fe
 
 Some of the new features (Rails 7.0+) utilized are:
 
-- Encrypted database fields (user email addresses)
+- Encrypted database fields (user email addresses) (Rails 7)
+- Health check at /up (Rails 7)
+- Multi-environment credentials (Rails 6)
 
 ## Installation
 
