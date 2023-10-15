@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_14_171062) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_15_200615) do
   create_table "educations", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -55,6 +55,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_14_171062) do
     t.string "host_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "linkedin_url"
+    t.string "portfolio_url"
   end
 
   create_table "taggings", force: :cascade do |t|

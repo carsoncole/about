@@ -53,6 +53,6 @@ class Admin::SettingsController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def setting_params
-      params.require(:setting).permit(:name, :description, :email, :phone, :address, :meta_description)
+      params.require(:setting).permit(:name, :description, :email, :linkedin_url, :portfolio_url, :phone, :address, :meta_description)
     end
 end

@@ -42,5 +42,17 @@
         .mb-3= f.label :phone
         = f.text_field :phone, class: 'form-control'
 
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :linkedin_url
+        = f.text_field :linkedin_url, class: 'form-control'
+
+  .row
+    .col-lg-8
+      .form-group.mb-5
+        .mb-3= f.label :portfolio_url
+        = f.text_field :portfolio_url, class: 'form-control'
+
   .actions
     = f.submit 'Save', class: 'btn btn-primary'

@@ -11,10 +11,19 @@
     .col-lg-12
       %section.contact
         = Setting&.first&.email || 'email'
-        \|
-        = Setting&.first&.phone || 'phone'
-        \|
-        = Setting&.first&.address || 'address'
+        - if Setting&.first&.phone.present?
+          \|
+          = Setting&.first&.phone || 'phone'
+        - if Setting&.first&.address.present?
+          \|
+          = Setting&.first&.address
+        %br
+        - if Setting&.first&.linkedin_url.present?
+          = link_to Setting&.first&.linkedin_url, Setting&.first&.linkedin_url
+        - if Setting&.first&.portfolio_url.present?
+          \|
+          = link_to Setting&.first&.portfolio_url, Setting&.first&.portfolio_url
+
 
   - if PROJECTS_DISPLAYED
     .row
