@@ -25,6 +25,12 @@
           = link_to Setting&.first&.portfolio_url, Setting&.first&.portfolio_url
 
 
+  - if Setting&.first&.summary.present?
+    .row
+      %section.summary
+        %h2 Summary
+        %p= Setting.first.summary
+
   - if PROJECTS_DISPLAYED
     .row
       %section.projects
