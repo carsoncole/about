@@ -1,17 +1,20 @@
-
 default: &default
-  adapter: sqlite3
+  adapter: mysql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: root
+  password: PASSWORD
+  host: localhost
 
 development:
   <<: *default
-  database: storage/about-development.sqlite3
+  database: about_development
 
 test:
   <<: *default
-  database: storage/about-test.sqlite3
+  database: about_test
 
 production:
   <<: *default
-  database: storage/about-production.sqlite3
+  host: ENV["DB_HOST"]
+  database: about_production
+  password: ENV["MYSQL_ROOT_PASSWORD"]
