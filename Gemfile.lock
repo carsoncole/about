@@ -321,6 +321,7 @@ DEPENDENCIES
   capybara
   clearance
   debug
+  execjs
   factory_bot_rails
   faker
   haml-rails
