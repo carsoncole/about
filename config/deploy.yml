@@ -6,7 +6,7 @@ image: carsoncole/about
 
 # Deploy to these servers.
 servers:
-  - 24.199.100.142
+  - 137.184.37.254
 
 # Credentials for your image host.
 registry:
@@ -22,7 +22,7 @@ registry:
 # Remember to run `kamal env push` after making changes!
 env:
   clear:
-    DB_HOST: 24.199.110.182
+    DB_HOST: localhost
   secret:
     - RAILS_MASTER_KEY
     - MYSQL_ROOT_PASSWORD
@@ -45,7 +45,8 @@ env:
 accessories:
   db:
     image: mysql:8.0
-    host: 24.199.110.182
+    roles:
+      - web
     port: 3306
     env:
       clear:
