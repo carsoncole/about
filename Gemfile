@@ -48,10 +48,8 @@ gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-
-gem "execjs"
+gem "tailwindcss-rails"
 gem "haml-rails"
-gem 'bootstrap'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', branch: 'master'
 gem "clearance"
 

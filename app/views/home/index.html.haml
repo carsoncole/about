@@ -1,63 +1,52 @@
-#home.container
-  .row
-    .col-lg-12
-      %h1.name= Setting&.first&.name || 'Name'
+%div.mx-5
+  %div
+    %h1.text-6xl.font-bold.mb-6= Setting&.first&.name || 'Name'
 
-  .row
-    .col-lg-12
-      %h2.description= Setting&.first&.description || 'Description'
+    %h2.description.mb-7= Setting&.first&.description || 'Description'
 
-  .row
-    .col-lg-12
-      %section.contact
-        = Setting&.first&.email || 'email'
-        - if Setting&.first&.phone.present?
-          \|
-          = Setting&.first&.phone || 'phone'
-        - if Setting&.first&.address.present?
-          \|
-          = Setting&.first&.address
-        %br
-        - if Setting&.first&.linkedin_url.present?
-          = link_to Setting&.first&.linkedin_url, Setting&.first&.linkedin_url
-        - if Setting&.first&.portfolio_url.present?
-          \|
-          = link_to Setting&.first&.portfolio_url, Setting&.first&.portfolio_url
+  %div
+    %section.contact.mb-7
+      = Setting&.first&.email || 'email'
+      - if Setting&.first&.phone.present?
+        \|
+        = Setting&.first&.phone || 'phone'
+      - if Setting&.first&.address.present?
+        \|
+        = Setting&.first&.address
+      %br
+      - if Setting&.first&.linkedin_url.present?
+        = link_to Setting&.first&.linkedin_url, Setting&.first&.linkedin_url
+      - if Setting&.first&.portfolio_url.present?
+        \|
+        = link_to Setting&.first&.portfolio_url, Setting&.first&.portfolio_url
 
+  %div
+    - if Setting&.first&.summary.present?
+      %div
+        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Summary
+        %p.mb-7= Setting.first.summary
 
-  - if Setting&.first&.summary.present?
-    .row
-      %section.summary
-        %h2 Summary
-        %p= Setting.first.summary
-
-  - if PROJECTS_DISPLAYED
-    .row
-      %section.projects
-        %h2 Open-Source Projects
+    - if PROJECTS_DISPLAYED
+      %div
+        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Open-Source Projects
         .carousel
           = render partial: 'projects/project', collection: @projects
 
-  - if SKILLSETS_DISPLAYED
-    .row
-      .col-lg-12
-        %section.skillsets
-          %h2 Skills
+    - if SKILLSETS_DISPLAYED
+      %div
 
-          - @tags.each do |tag|
-            .skill= tag.name
+        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Skills
 
-  - if EXPERIENCES_DISPLAYED
-    .row
-      .col-lg-12
-        %section.experiences
-          %h2 Experience
-          = render partial: 'experience', collection: @experiences
+        - @tags.each do |tag|
+          .skill= tag.name
 
-  .row
-    .col-lg-12
-      %section.educations
-        %h2 Education
+    - if EXPERIENCES_DISPLAYED
+      %div
+        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Experience
+        = render partial: 'experience', collection: @experiences
+
+      %div
+        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Education
         = render partial: 'education', collection: @educations
 
 
