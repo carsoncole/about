@@ -3,8 +3,9 @@
   %head
     = render 'shared/head'
 
-  %body.bg-indigo-950.text-white
-    %div.m-7(class='lg:w-2/3')
-      = yield
+  %body.bg-indigo-950.text-white.m-7
+    %div.flex.justify-center
+      %div(class='lg:w-2/3')
+        = yield
 
-      = render 'shared/footer'
+        = render 'shared/footer'

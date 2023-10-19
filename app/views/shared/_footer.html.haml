@@ -1,10 +1,9 @@
 %footer
-  %div.flex.justify-center.text-xs
+  %div.flex.justify-center.text-xs.text-indigo-300
 
-    - if action_name == 'about'
-      %span.p-1= link_to "home", root_path
-    - else
-      %span.p-1= link_to "about", about_path
+    %span.p-1= link_to "Home", root_path
+    - unless action_name == 'about'
+      %span.p-1= link_to "About", about_path
 
     - if signed_in?
       - if Setting.first
@@ -12,7 +11,7 @@
       - else
         %span.p-1= link_to "Settings", new_admin_setting_path, class: 'nav-link'
 
-      %span.pd-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link'
+      %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link'
     - else
       %span.p-1= link_to "Sign in", sign_in_path, class: 'nav-link'
 
