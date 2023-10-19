@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
+  get '/about' => 'home#about', as: 'about'
   get '/resume' => 'resume#show', as: 'resume'
+
 
   resources :projects, only: :show
 

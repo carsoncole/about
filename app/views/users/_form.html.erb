@@ -1,9 +1,13 @@
-<div class="text-field">
-  <%= form.label :email %>
-  <%= form.email_field :email %>
+<div class='mb-5'>
+  <div class='mb-3'>
+    <%= form.label :email %>
+  </div>
+  <%= form.email_field :email, class: "rounded text-pink-500" %>
 </div>
 
-<div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+<div class="mb-5">
+  <div class='mb-3'>
+    <%= form.label :password %>
+  </div>
+  <%= form.password_field :password, class: "rounded text-pink-500" %>
 </div>

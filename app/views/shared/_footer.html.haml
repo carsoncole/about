@@ -1,21 +1,20 @@
 %footer
+  %div.flex.justify-center.text-xs
 
-  %ul.nav.flex.justify-center.md:justify-end
-    - if signed_in?
-      %li.nav-item.pr-2
-        - if Setting.first
-          = link_to "Admin", admin_experiences_path, class: 'nav-link'
-        - else
-          = link_to "Settings", new_admin_setting_path, class: 'nav-link'
-
-      %li.nav-item= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link'
+    - if action_name == 'about'
+      %span.p-1= link_to "home", root_path
     - else
-      %li.nav-item= link_to "Sign in", sign_in_path, class: 'nav-link'
+      %span.p-1= link_to "about", about_path
 
-  Source:
-  = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git", target: '_blank'
-  .copyright
-    Copyright
-    = Date.today.year
-    Carson R Cole
+    - if signed_in?
+      - if Setting.first
+        %span.p-1= link_to "Admin", admin_experiences_path, class: 'nav-link'
+      - else
+        %span.p-1= link_to "Settings", new_admin_setting_path, class: 'nav-link'
+
+      %span.pd-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'nav-link'
+    - else
+      %span.p-1= link_to "Sign in", sign_in_path, class: 'nav-link'
+
+
 

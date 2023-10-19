@@ -28,9 +28,15 @@
         %p.mb-7= Setting.first.summary
 
     - if PROJECTS_DISPLAYED
-      %div.mb-12(class= 'lg:w-2/3')
-        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Projects
-        = render partial: 'projects/project', collection: @projects
+      %div.mb-12
+        %div.border-b.border-indigo-900.mb-5(class= 'lg:w-2/3')
+          .float-left.text-indigo-400.font-bold.mb-2.font-2xl.uppercase Projects
+          - if signed_in?
+            .float-right
+              = link_to 'edit', admin_projects_path
+          .clear-both
+        %div
+          = render partial: 'projects/project', collection: @projects
 
     - if SKILLSETS_DISPLAYED
       %div.mb-12(class= 'lg:w-2/3')
@@ -41,13 +47,22 @@
         %div.clear-both
 
     - if EXPERIENCES_DISPLAYED
-
-      %div.mb-12(class= 'lg:w-2/3')
-        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.mb-4.pb-2 Experience
+      %div.mb-12
+        %div.border-b.border-indigo-900.mb-5(class= 'lg:w-2/3')
+          .float-left.text-indigo-400.font-bold.mb-2.font-2xl.uppercase Experience
+          - if signed_in?
+            .float-right
+              = link_to 'edit', admin_experiences_path
+          .clear-both
         = render partial: 'experiences/experience', collection: @experiences
 
-      %div.mb-12(class= 'lg:w-2/3')
-        %h2.text-indigo-400.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-2 Education
+      %div.mb-12
+        %div.border-b.border-indigo-900.mb-5(class= 'lg:w-2/3')
+          .float-left.text-indigo-400.font-bold.mb-2.font-2xl.uppercase Education
+          - if signed_in?
+            .float-right
+              = link_to 'edit', admin_educations_path
+          .clear-both
         = render partial: 'education', collection: @educations
 
 

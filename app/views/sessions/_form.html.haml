@@ -1,19 +1,22 @@
-.row
-  .col-lg-5
-    = form_for :session, url: session_path do |form|
-      .form-group.mb-3
-        .mb-2= form.label :email
-        = form.email_field :email, class: 'form-control'
+%div
+  = form_for :session, url: session_path do |form|
+    %div.mb-5
+      %div.mb-3
+        = form.label :email
+      = form.email_field :email, class: 'rounded text-pink-500'
 
-      .form-group.mb-3
+    %div.mb-5
+      .mb-3
         .mb-2= form.label :password
-        = form.password_field :password, class: 'form-control'
 
-      .submit-field.mb-3
-        = form.submit class: 'btn btn-primary'
+      = form.password_field :password, class: 'rounded text-pink-500'
 
-      .other-links
-        - if Clearance.configuration.allow_sign_up?
-          = link_to t(".sign_up"), sign_up_path
+    %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded.mb-7
+      Submit
 
-        = link_to t(".forgot_password"), new_password_path
+
+    .other-links
+      - if Clearance.configuration.allow_sign_up?
+        = link_to t(".sign_up"), sign_up_path
+
+      = link_to t(".forgot_password"), new_password_path
