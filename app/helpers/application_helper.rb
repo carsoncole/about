@@ -15,6 +15,6 @@ module ApplicationHelper
   end
 
   def date_range(start_date, end_date)
-    (compact_date(start_date) || '' ) + ' - ' + (compact_date(end_date) || 'present')
+    (compact_date_2(start_date) || '' ) + ' - ' + (compact_date_2(end_date) || 'present')
   end
 end

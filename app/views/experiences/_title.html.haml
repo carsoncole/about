@@ -1,0 +1,14 @@
+%div.text-2xl.font-bold
+  %span
+    = succeed(", ") do
+      = experience.title
+  %span
+    - if experience.url.present?
+      = link_to experience.name, experience.url
+    - else
+      = experience.name
+
+  - if signed_in?
+    %span.text-xs.text-indigo-300
+      = link_to "edit", edit_admin_experience_path(experience)
+

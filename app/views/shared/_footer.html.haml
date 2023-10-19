@@ -1,8 +1,8 @@
-%footer.container
+%footer
 
-  %ul.nav.justify-content-center
+  %ul.nav.flex.justify-center.md:justify-end
     - if signed_in?
-      %li.nav-item
+      %li.nav-item.pr-2
         - if Setting.first
           = link_to "Admin", admin_experiences_path, class: 'nav-link'
         - else
@@ -16,7 +16,6 @@
   = link_to "github.com/carsoncole/about", "https://github.com/carsoncole/about.git", target: '_blank'
   .copyright
     Copyright
-    %i.bi.bi-c-circle
     = Date.today.year
     Carson R Cole
 
