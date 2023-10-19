@@ -17,6 +17,13 @@ User sign-up is open when first running the app. Once you've registered yourself
   config.allow_sign_up = false
 ```
 
+### Docker
+
+`Dockerfile` is configured to create a Docker image.
+
+### Kamal
+
+Configured for deployment via Kamal. See `config/deploy.yml` for the Kamal configuration. Read more at https://github.com/basecamp/kamal.
 
 ## Seed Data
 
