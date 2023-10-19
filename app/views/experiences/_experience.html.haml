@@ -1,8 +1,11 @@
-%article.mb-12.rounded.shadow-inner.p-5.bg-indigo-100.text-black
+%article.mb-7.rounded.shadow-inner.p-5.bg-indigo-100.text-black
   %div
     = render partial: 'experiences/title', locals: { experience: experience }
 
   %div.mb-3
+    - if experience.location.present?
+      = succeed(", ") do
+        = experience.location
     = date_range(experience.start_date, experience.end_date)
 
   %div.mb-3

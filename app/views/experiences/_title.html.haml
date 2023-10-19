@@ -4,7 +4,8 @@
       = experience.title
   %span
     - if experience.url.present?
-      = link_to experience.name, experience.url
+      %span.text-indigo-400
+        = link_to experience.name, experience.url
     - else
       = experience.name
 

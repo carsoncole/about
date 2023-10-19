@@ -72,6 +72,6 @@ class Admin::ExperiencesController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def experience_params
-      params.require(:experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order, :experience, :skillset)
+      params.require(:experience).permit(:title, :name, :url, :start_date, :end_date, :description, :order, :location, :experience, :skillset)
     end
 end

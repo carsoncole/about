@@ -1,18 +1,17 @@
 
-.project-panel
-  .project
-    %span
-      = link_to project.name, project
-    %span.text-indigo-400
-      = link_to 'edit', edit_admin_project_path(project)
-    %div.text-indigo-400
-      = link_to project.source_url, project.source_url, target: '_blank'
+%div.mb-4
+  %span.text-lg.font-bold
+    = link_to project.name, project
+  %span.text-indigo-400
+    = link_to 'edit', edit_admin_project_path(project)
+  %div.text-indigo-400
+    = link_to project.source_url, project.source_url, target: '_blank'
 
-    - if project.image_url.present?
-      .project-image
-        = image_tag project.image_url, class: 'img-fluid'
+  - if project.image_url.present?
+    .project-image
+      = image_tag project.image_url, class: 'img-fluid'
 
-    .description= project.description
+  .description= project.description
 
-    - if project.working_url.present?
-      %p= link_to project.working_url, project.working_url, target: '_blank'
+  - if project.working_url.present?
+    %p= link_to project.working_url, project.working_url, target: '_blank'
