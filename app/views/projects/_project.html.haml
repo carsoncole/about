@@ -1,8 +1,12 @@
 
 .project-panel
   .project
-    .name= link_to project.name, project
-    .source-url= link_to project.source_url, project.source_url
+    %span
+      = link_to project.name, project
+    %span.text-indigo-400
+      = link_to 'edit', edit_admin_project_path(project)
+    %div.text-indigo-400
+      = link_to project.source_url, project.source_url, target: '_blank'
 
     - if project.image_url.present?
       .project-image
