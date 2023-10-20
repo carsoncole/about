@@ -1,0 +1,8 @@
+%div.mb-7
+  %span.text-lg.font-bold
+    = succeed(", ") do
+      = education.name
+    = education.title
+  %div
+    = compact_date_2(education.end_date)
+

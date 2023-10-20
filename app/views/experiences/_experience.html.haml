@@ -1,6 +1,5 @@
 %article.mb-7.rounded.shadow-inner.p-5.bg-indigo-100.text-black
-  %div
-    = render partial: 'experiences/title', locals: { experience: experience }
+  = render partial: 'experiences/title', locals: { experience: experience }
 
   %div.mb-3
     - if experience.location.present?

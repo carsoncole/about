@@ -1,0 +1,5 @@
+%h1.text-indigo-200.font-bold.mb-2.font-2xl.uppercase.border-b.border-indigo-900.mb-4.pb-3 Skills
+%div.text-sm
+  - @tags.each do |tag|
+    .skill.border.float-left.m-1.bg-white.p-3.rounded.shadow-lg.text-black.py-1.px-4.font-bold= tag.name
+%div.clear-both
