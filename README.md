@@ -26,11 +26,10 @@ User sign-up is open when first running the app. Once you've registered yourself
 
 Configured for deployment via Kamal. See `config/deploy.yml` for the Kamal configuration. Read more at https://github.com/basecamp/kamal.
 
-## Seed Data
 
-A full set of sample seed data is available. To load the data:
+## Image
 
-    % rails db:seed
+You'll need to customize the included image of myself. Replace with your own photo at `assets/images/profile_photo.jpeg`.
 
 
 ## Testing
