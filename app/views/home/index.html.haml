@@ -1,7 +1,6 @@
-
-%header.mb-20
-  %div.mb-10
-    %h1.text-4xl.font-bold.md:text-6xl.mb-2= Setting&.first&.name || 'Name'
+%header.mb-20.mt-8
+  %div.mb-8
+    %h1.text-4xl.font-bold.md:text-6xl.mb-5= Setting&.first&.name || 'Name'
 
     %p.text-2xl.md:text-3xl= Setting&.first&.description || 'Description'
 
@@ -15,7 +14,7 @@
       = Setting&.first&.address
     %br
     - if Setting&.first&.linkedin_url.present?
-      %div.text-indigo-400
+      %div
         = link_to Setting&.first&.linkedin_url, target: '_blank' do
           %span.float-left.pr-1
             LinkedIn
@@ -26,22 +25,43 @@
 
 - if Setting&.first&.summary.present?
   %section.mb-12
+    %h1.font-bold.mb-6.text-xl.uppercase.border-b.border-slate-100.pb-3
+      - if signed_in?
+        = link_to "Summary", edit_admin_setting_path(Setting.first)
+      - else
+        Summary
     = render 'summary'
 
 - if PROJECTS_DISPLAYED && Project.any?
   %section.mb-12
+    %h1.font-bold.mb-6.text-xl.uppercase.border-b.border-slate-100.pb-3
+      - if signed_in?
+        = link_to "Projects", admin_projects_path
+      - else
+        Projects
     = render 'projects'
 
 - if SKILLSETS_DISPLAYED
   %section.mb-12
+    %h1.font-bold.mb-2.text-xl.uppercase.border-b.border-slate-100.mb-4.pb-3 Skills
     = render 'skillsets'
 
 - if EXPERIENCES_DISPLAYED && Experience.any?
   %section.mb-12
+    %h1.font-bold.mb-6.text-xl.uppercase.border-b.border-slate-100.pb-3
+      - if signed_in?
+        = link_to "Experiences", admin_experiences_path
+      - else
+        Experiences
     = render 'experiences'
 
 - if EDUCATION_DISPLAYED && Education.any?
   %section.mb-12
+    %h1.font-bold.mb-6.text-xl.uppercase.border-b.border-slate-100.pb-3
+      - if signed_in?
+        = link_to "Education", admin_educations_path
+      - else
+        Education
     = render 'education'
 
 

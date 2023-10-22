@@ -1,7 +1,2 @@
-%h1.text-indigo-200.font-bold.mb-6.font-2xl.uppercase.border-b.border-indigo-900.pb-3
-  - if signed_in?
-    = link_to "Projects", admin_projects_path
-  - else
-    Projects
 %div
   = render partial: 'projects/project', collection: @projects

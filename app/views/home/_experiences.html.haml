@@ -1,6 +1,1 @@
-%h1.text-indigo-200.font-bold.mb-6.font-2xl.uppercase.border-b.border-indigo-900.pb-3
-  - if signed_in?
-    = link_to "Experiences", admin_experiences_path
-  - else
-    Experiences
 = render partial: 'experiences/experience', collection: @experiences

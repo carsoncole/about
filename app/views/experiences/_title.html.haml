@@ -1,11 +1,11 @@
-%div.text-xl.md:text-2xl.font-bold
+%div.text-xl.font-bold
   %h2
     %span
       = succeed(", ") do
         = experience.title
     %span
       - if experience.url.present?
-        %span.text-indigo-400
+        %span
           = link_to experience.name, experience.url
       - else
         = experience.name
