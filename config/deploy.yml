@@ -4,7 +4,7 @@ image: carsoncole/about
 servers:
   web:
     hosts:
-      - 164.90.151.243
+      - 146.190.147.17
     labels:
       traefik.http.routers.domain.rule: Host(`carsonrcole.com`)
       traefik.http.routers.domain.entrypoints: websecure
@@ -18,7 +18,7 @@ registry:
 
 env:
   clear:
-    DB_HOST: 164.90.151.243
+    DB_HOST: 146.190.147.17
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
@@ -26,7 +26,7 @@ env:
 accessories:
   db:
     image: postgres:15
-    host: 164.90.151.243
+    host: 146.190.147.17
     port: 5432
     env:
       clear:
