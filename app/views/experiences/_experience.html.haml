@@ -13,8 +13,11 @@
   - if EXPERIENCE_SKILLS_DISPLAYED
     %div
       - experience.skill_list.each do |skill|
-        %span.pr-1.text-xs.border.border-slate-200.py-1.px-2.mr-2.text-slate-500
+
+        %div.float-left.text-xs.border.border-slate-200.py-1.px-2.mr-2.mb-2.text-slate-500
           = skill
+
+      %div.clear-both
 
 
 
