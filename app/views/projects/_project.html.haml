@@ -1,5 +1,5 @@
-%div.float-left.w-64.bg-white.p-5.mx-3.mb-3.bg-white.border.border-gray-200.shadow.hover:bg-gray-100.dark:bg-gray-800.dark:border-gray-700.dark:hover:bg-gray-700
-  %h2.mb-4.text-xl.font-bold.dark:text-white
+%div.mb-8.border-t.pt-4
+  %h2.mb-2.text-xl.font-bold.dark:text-white
     = link_to project.source_url, target: '_blank' do
       .text-slate-900.dark:text-white= project.name
 
@@ -7,7 +7,7 @@
     .project-image
       = image_tag project.image_url, class: 'img-fluid'
 
-  %p.font-normal.text-sm.mb-4.text-gray-700.dark:text-gray-400= project.description
+  %p.font-normal.text-sm.mb-3.text-gray-700.dark:text-gray-400= project.description
 
   %p
     = link_to project.source_url, target: '_blank', class: 'text-slate-500 text-sm' do

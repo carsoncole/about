@@ -1,13 +1,13 @@
 %article.mb-7.border.border-slate-200.shadow.p-5.text-black.dark:text-white
   = render partial: 'experiences/title', locals: { experience: experience }
 
-  %div.mb-3
+  %h1.mb-3
     - if experience.location.present?
       = succeed(", ") do
         = experience.location
     = date_range(experience.start_date, experience.end_date)
 
-  %div.mb-3
+  %p.mb-3
     =experience.description
 
   - if EXPERIENCE_SKILLS_DISPLAYED

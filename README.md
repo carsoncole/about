@@ -31,6 +31,9 @@ Configured for deployment via Kamal. See `config/deploy.yml` for the Kamal confi
 
 You'll need to customize the included image of myself. Replace with your own photo at `assets/images/profile_photo.jpeg`.
 
+## Sitemap
+
+This file is configured manually and updates should be made to `views/home/sitemap.xml`.
 
 ## Testing
 

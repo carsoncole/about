@@ -6,12 +6,7 @@
   a {
     @apply text-slate-400;
   }
-  section h1 {
-    @apply text-slate-600;
-  }
 }
-
-
 
 /*
   @layer components {

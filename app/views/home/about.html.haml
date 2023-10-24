@@ -1,11 +1,32 @@
-
-%div.m-20.lg:mr-64.lg:ml-64
-  %div.flex.text-center.mb-5
-    %p Site produced with Ruby on Rails, Tailwind CSS, Docker and Digital Ocean for hosting, and Kamal for automated deployment.
-  %div.flex.justify-center
-    %p
-      Source code available at
-      = succeed(".") do
-        = link_to "github.com", "https://github.com/carsoncole/about.git", target: '_blank'
+%div.grid.grid-cols-3
+  %div.col-span-3.md:col-start-1.md:col-span-2
+    %section.mb-12
+      %h1.flex.font-bold.tracking-tight.mb-10.text-4xl.text-slate-900.dark:text-slate-200.pb-3
+        / %div.mr-3= render 'shared/fingerprint'
+        %div About
 
 
+    - if Setting&.first&.linkedin_url.present?
+      %div.inline-block.font-medium
+        = link_to Setting&.first&.linkedin_url, target: '_blank' do
+          = render 'shared/linkedin_svg'
+    - if Setting&.first&.github_url.present?
+      %div.inline-block
+        = link_to Setting&.first&.github_url, target: '_blank' do
+          = render 'shared/github_svg'
+
+    .mt-4.flex.flex-row.font-medium
+      - if Setting&.first&.email.present?
+        = link_to Setting&.first&.email do
+          %div.mr-3
+            = render 'shared/email_svg'
+        = link_to "mailto: #{Setting&.first&.email}", class: 'text-slate-900' do
+          %div
+            = Setting&.first&.email
+
+    .mt-4.flex.flex-row.font-medium
+      - if Setting&.first&.phone.present?
+        %div.mr-3.fill-slate-500
+          = render 'shared/phone_svg'
+        %div
+          = Setting&.first&.phone

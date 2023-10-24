@@ -2,7 +2,7 @@ class Admin::ExperiencesController < Admin::AdminController
   before_action :set_experience, only: %i[ show edit update destroy ]
 
   def index
-    @experiences = Experience.order(:order)
+    @experiences = Experience.order(:order, start_date: :desc)
   end
 
   # GET /admin/experiences/1 or /admin/experiences/1.json

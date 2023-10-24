@@ -1,0 +1,51 @@
+%div.grid.grid-cols-3
+  %div.col-span-3.md:col-start-1.md:col-span-2.mb-15
+    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-20.text-4xl.md:text-5xl
+      Full stack tools I'm using on this site.
+
+%ul.list-none
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      .inline-block.align-middle.mr-2= image_tag 'ror_logo.svg', alt: 'Ruby on Rails logo', class: 'h-8 w-8'
+      .inline-block.align-middle= link_to "Ruby on Rails (version 7.1)", "https://rubyonrails.org", target: '_blank', class: 'font-medium text-slate-500'
+    %p.ml-8.mb-10.max-w-prose The latest and the greatest, packed with new database encryption features, and front end tools with Stimulus and Turbo.
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      .inline-block.align-middle.mr-2= image_tag 'tailwindcss_logo.svg', alt: 'Tailwind CSS logo', class: 'h-8 w-8'
+      .inline-block.align-middle= link_to "Tailwind CSS", "https://tailwindcss.com", target: '_blank', class: 'font-medium text-slate-500'
+    %p.ml-8.mb-10.max-w-prose Discovering this utility-first CSS framework was design-changing. Never would have guessed this approach would be a leap up from Bootstrap.
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      .inline-block.align-middle.mr-2= image_tag 'postgresql_logo.svg', alt: 'PostgreSQL logo', class: 'h-6 w-6'
+      .inline-block.align-middle.font-medium.text-slate-500 PostgreSQL (version 8.1)
+    %p.ml-8.mb-10.max-w-prose Probably could have used SQLite for this application, but this always works.
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      .inline-block.align-middle.mr-2= image_tag 'docker_logo.svg', alt: 'Docker logo', class: 'h-6 w-6'
+      .inline-block.font-medium.text-slate-500 Docker
+    %p.ml-8.mb-10.max-w-prose Using this in conjunction with Kamal for easy management and deployment.
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      .inline-block.align-middle.mr-2= image_tag 'digital_ocean_logo.svg', alt: 'Digital Ocean logo', class: 'h-5 w-5'
+      = link_to "Digital Ocean", "https://digitalocean.com", target: '_blank', class: 'font-medium text-slate-500'
+    %p.ml-8.mb-10.max-w-prose Rock solid hosting platform with SSD by default and all the necessary tools.
+  %li
+    %div.mb-3.align-middle
+      .inline-block.align-middle.mr-2= render 'shared/checkmark_svg'
+      = link_to "Kamal", "https://kamal-deploy.org", target: '_blank', class: 'font-medium text-slate-500'
+    %p.ml-8.mb-10.max-w-prose Automated deployment and management in this new 37Signals-extracted tool. This is my first application using it and I'm impressed.
+
+
+
+%div.flex.justify-center
+  %p
+    Check out my open-sourced code at
+    = succeed(".") do
+      = link_to "github.com", "https://github.com/carsoncole/about.git", target: '_blank'
+
+

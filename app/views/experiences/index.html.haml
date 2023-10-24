@@ -1,0 +1,14 @@
+%h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.mb-20.text-4xl.md:text-5xl(class='md:w-2/3')
+  / %div.mr-3= render 'shared/briefcase'
+  %div.leading-tight.md:leading-tight Crafting Ruby on Rails applications, and manageing investments.
+
+%div.grid.grid-cols-3.gap-6
+  %div.col-span-3.md:col-start-1.md:col-span-2
+    = render partial: 'experiences/experience', collection: @experiences
+
+  %aside
+    - if SKILLSETS_DISPLAYED
+      %section.mb-12
+        %h1.font-bold.mb-2.text-xl.mb-4.pb-3 Skills
+        = render 'home/skillsets'
+

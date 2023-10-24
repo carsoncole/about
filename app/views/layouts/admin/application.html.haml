@@ -1,19 +1,13 @@
 !!!
 %html
   %head
-    %title About
-    %meta(name="viewport" content="width=device-width,initial-scale=1")
-    = csrf_meta_tags
-    = csp_meta_tag
-
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_importmap_tags
+    = render 'shared/head'
 
 
-  %body.container
-    .row
-      .col-lg-3.admin-nav
-        %ul.nav.flex-column
+  %body.my-10.font-serif.dark:text-slate-100.bg-slate-50.dark:bg-slate-900
+    %div.flex.justify-center
+      %div.bg-white.p-20.dark:bg-slate-950(class='lg:w-2/3')
+        %ul.nav
           %li.nav-item
             = link_to root_path, class: 'nav-link' do
               %i.bi.bi-house
@@ -36,7 +30,6 @@
               %i.bi.bi-person-workspace
               Education
 
-      .col-lg-9
         = yield
 
   = render 'shared/footer'

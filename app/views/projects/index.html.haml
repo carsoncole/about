@@ -1,0 +1,7 @@
+%div.grid.grid-cols-3
+  %div.col-span-3.md:col-start-1.md:col-span-2
+    - if PROJECTS_DISPLAYED && Project.any?
+      %section.mb-12
+        %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-20.text-4xl.md:text-5xl
+          Applications I've crafted with Ruby on Rails.
+        = render 'projects'

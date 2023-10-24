@@ -1,80 +1,11 @@
-%header.mb-20.mt-8
-  %div.mb-8
+%div.grid.grid-cols-3.gap-6
+  %div.col-start-1.col-span-2
+    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-20.text-4xl.md:text-5xl= Setting&.first&.description || 'Description'
 
-    %h1.text-5xl.font-bold.md:text-6xl.mb-5= Setting&.first&.name || 'Name'
-
-    %div.rounded.pl-5.pr-2.md:pr-4.py-3.md:py-6.bg-slate-100.dark:bg-slate-700
-      = image_tag "profile_photo.jpeg", class: 'ml-1 mb-10 float-right w-44 md:w-60 h-44 md:h-60 rounded-full shadow-xl dark:shadow-gray-800'
-
-      %p.text-xl.md:text-3xl= Setting&.first&.description || 'Description'
-
-  %div.mb-7
-    = Setting&.first&.email || 'email'
-    - if Setting&.first&.phone.present?
-      \|
-      = Setting&.first&.phone || 'phone'
-    - if Setting&.first&.address.present?
-      \|
-      = Setting&.first&.address
-    %br
-    - if Setting&.first&.linkedin_url.present?
-      %div
-        = link_to Setting&.first&.linkedin_url, target: '_blank' do
-          %svg.float-left.mr-1(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5")
-            %path(d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z")
-            %path(d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z")
-          %span.float-left.pr-1
-            LinkedIn
-    .float-right
-      %div
-        = link_to asset_path("resume.pdf"), download: 'resume.pdf'  do
-          .inline-block= render 'shared/download_svg'
-          Download resume
-
-- if Setting&.first&.summary.present?
-  %section.mb-12
-    %h1.font-bold.mb-6.text-xl.uppercase.pb-3
-      - if signed_in?
-        = link_to "Summary", edit_admin_setting_path(Setting.first)
-      - else
-        Summary
-    = render 'summary'
-
-- if PROJECTS_DISPLAYED && Project.any?
-  %section.mb-12
-    %h1.font-bold.mb-6.text-xl.uppercase.pb-3
-      - if signed_in?
-        = link_to "Projects", admin_projects_path
-      - else
-        Projects
-    = render 'projects'
-
-- if SKILLSETS_DISPLAYED
-  %section.mb-12
-    %h1.font-bold.mb-2.text-xl.uppercase.mb-4.pb-3 Skills
-    = render 'skillsets'
-
-- if EXPERIENCES_DISPLAYED && Experience.any?
-  %section.mb-12
-    %h1.font-bold.mb-6.text-xl.uppercase.pb-3
-      - if signed_in?
-        = link_to "Experiences", admin_experiences_path
-      - else
-        Experiences
-    = render 'experiences'
-
-- if EDUCATION_DISPLAYED && Education.any?
-  %section.mb-12
-    %h1.font-bold.mb-6.text-xl.uppercase.pb-3
-      - if signed_in?
-        = link_to "Education", admin_educations_path
-      - else
-        Education
-    = render 'education'
+    %h1.mb-10.text-lg.text-slate-500.max-w-prose
+      = render 'summary'
 
 
-/ .row
-/   .col-md-12
-/     .resume-link
-/       = link_to "Download Resume", resume_path(format: :pdf), target: '_blank'
-/       %i.far.fa-arrow-alt-circle-down
+  %div
+    = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'h-56 w-56 mb-10 ml-4 rounded-xl rotate-6 shadow-xl dark:shadow-gray-800'
+
