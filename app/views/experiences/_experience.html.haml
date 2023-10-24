@@ -1,7 +1,7 @@
 %article.mb-7.border.border-slate-200.shadow.p-5.text-black.dark:text-white
   = render partial: 'experiences/title', locals: { experience: experience }
 
-  %h1.mb-3
+  %h2.mb-3
     - if experience.location.present?
       = succeed(", ") do
         = experience.location

@@ -14,10 +14,10 @@
   </url>
   <url>
     <loc>https://carsoncole.com/source</loc>
-    <lastmod><%= Setting.first(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
   </url>
   <url>
     <loc>https://carsoncole.com/about</loc>
-    <lastmod><%= Setting.first(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
   </url>
 </urlset>
