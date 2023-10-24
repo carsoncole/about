@@ -3,7 +3,7 @@
     %section.mb-12
       %h1.flex.font-bold.tracking-tight.mb-10.text-4xl.text-slate-900.dark:text-slate-200.pb-3
         / %div.mr-3= render 'shared/fingerprint'
-        %div About
+        %div= Setting.first.about_headline
 
 
     - if Setting&.first&.linkedin_url.present?

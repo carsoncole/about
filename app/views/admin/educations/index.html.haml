@@ -1,14 +1,17 @@
-%h1 Education
+%h1.mb-6.text-4xl.text-slate-850.dark:text-slate-100  Education
 
-%table.table.projects
-
-
+%table.table-fixed.w-full.text-sm.border-collapse(class="border-separate border-spacing-2 border-slate-200")
+  %thead
+    %tr
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left") Name
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left") Title
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left")
   %tbody
     - @educations.each do |education|
       %tr
-        %td= education.name
-        %td= education.title
-        %td.actions
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")= education.name
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")= education.title
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")
           = link_to 'Show', admin_education_path(education)
           = link_to 'Edit', edit_admin_education_path(education)
           = link_to 'Destroy', admin_education_path(education), method: :delete, data: { "turbo-method": :delete, confirm: 'Are you sure?' }

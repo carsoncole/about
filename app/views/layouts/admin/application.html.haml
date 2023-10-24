@@ -4,32 +4,9 @@
     = render 'shared/head'
 
 
-  %body.my-10.font-serif.dark:text-slate-100.bg-slate-50.dark:bg-slate-900
+  %body.my-10.font-sans.dark:text-slate-100.bg-slate-50.dark:bg-slate-900
     %div.flex.justify-center
-      %div.bg-white.p-20.dark:bg-slate-950(class='lg:w-2/3')
-        %ul.nav
-          %li.nav-item
-            = link_to root_path, class: 'nav-link' do
-              %i.bi.bi-house
-              Home
-          - unless Setting.first.nil?
-            %li.nav-item
-              = link_to edit_admin_setting_path(Setting.first), class: 'nav-link' do
-                %i.bi.bi-gear
-                Settings
-          %li.nav-item
-            = link_to admin_projects_path, class: 'nav-link' do
-              %i.bi.bi-code-square
-              Projects
-          %li.nav-item
-            = link_to admin_experiences_path, class: 'nav-link' do
-              %i.bi.bi-person-workspace
-              Experiences
-          %li.nav-item
-            = link_to admin_educations_path, class: 'nav-link' do
-              %i.bi.bi-person-workspace
-              Education
+      %div.bg-white.p-20.dark:bg-slate-950(class='lg:w-4/5')
+        = render 'admin/shared/admin_nav'
 
         = yield
-
-  = render 'shared/footer'

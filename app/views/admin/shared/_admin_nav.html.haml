@@ -1,0 +1,19 @@
+%div.flex.justify-center
+  %nav.flex.space-x-4.justify-center.text-sm.border.rounded-full.font-medium.shadow-lg.p-2.mb-20.backdrop-blur(class='ring-1 shadow-slate-800/5 ring-slate-900/5 dark:ring-white/10 dark:bg-slate-800/90 dark:text-slate-200')
+    %div
+      = link_to root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850' do
+        %i.bi.bi-house
+        Home
+    - unless Setting.first.nil?
+      %div
+        = link_to edit_admin_setting_path(Setting.first), class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850' do
+          Settings
+    %div
+      = link_to admin_projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850' do
+        Projects
+    %div
+      = link_to admin_experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850' do
+        Experiences
+    %div
+      = link_to admin_educations_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850' do
+        Education

@@ -12,8 +12,8 @@
       = f.text_field :name, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
 
-    .mb-3= f.label :description
-    = f.text_area :description, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+    .mb-3= f.label :home_headline
+    = f.text_area :home_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
 
     .mb-3= f.label :meta_description
@@ -45,6 +45,18 @@
 
     .mb-3= f.label :summary
     = f.text_area :summary, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+
+    .mb-3= f.label :projects_headline
+    = f.text_area :projects_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+
+    .mb-3= f.label :experiences_headline
+    = f.text_area :experiences_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+
+    .mb-3= f.label :about_headline
+    = f.text_area :about_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+
+    .mb-3= f.label :source_headline
+    = f.text_area :source_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
     .actions
       = f.submit 'Save', class: 'btn btn-primary'

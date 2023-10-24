@@ -1,24 +1,28 @@
-.row
-  .col-lg-12
-    %h1 Experiences
 
-.row
-  .col-lg-12
-    %table.table.experiences
-      %tbody
-        - @experiences.each do |experience|
-          %tr
-            %td= experience.title
-            %td= experience.name
-            %td= date_range(experience.start_date, experience.end_date)
-            %td.actions
-              = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order - 1}}), method: :patch, data: { 'turbo-method': :patch } do
-                %i.bi.bi-arrow-up
-              = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order + 1}}), method: :patch, data: { 'turbo-method': :patch } do
-                %i.bi.bi-arrow-down
-              = link_to 'Show', admin_experience_path(experience)
-              = link_to 'Edit', edit_admin_experience_path(experience)
-              = link_to 'Destroy', admin_experience_path(experience), method: :delete, data: { 'turbo-method': :delete, confirm: 'Are you sure?' }
+%h1.mb-6.text-4xl.text-slate-850.dark:text-slate-100 Experiences
+
+
+%table.table-fixed.w-full.text-sm.border-collapse(class="border-separate border-spacing-2 border-slate-200")
+  %thead
+    %tr
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left") Title
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left") Name
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left") Dates
+      %th(class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left")
+  %tbody
+    - @experiences.each do |experience|
+      %tr
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")= experience.title
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")= experience.name
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")= date_range(experience.start_date, experience.end_date)
+        %td(class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400")
+          = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order - 1}}), method: :patch, data: { 'turbo-method': :patch } do
+            %i.bi.bi-arrow-up
+          = link_to admin_experience_path(experience, params: { index: true, experience: { order: experience.order + 1}}), method: :patch, data: { 'turbo-method': :patch } do
+            %i.bi.bi-arrow-down
+          = link_to 'Show', admin_experience_path(experience)
+          = link_to 'Edit', edit_admin_experience_path(experience)
+          = link_to 'Destroy', admin_experience_path(experience), method: :delete, data: { 'turbo-method': :delete, confirm: 'Are you sure?' }
 
 %br
 
