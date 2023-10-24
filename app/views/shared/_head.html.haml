@@ -1,12 +1,15 @@
 - if Setting.first.nil?
   %title About
 - else
-  %title=  Setting.first.name
+  %title= @title || Setting.first.name
   %meta{ name: "description", content: Setting.first.meta_description }
 %meta(name="viewport" content="width=device-width,initial-scale=1")
+%link(rel="canonical" href="#{ url_for(:only_path => false, :protocol => 'https') }")
 = csrf_meta_tags
 = csp_meta_tag
 %link(rel="stylesheet" href="https://rsms.me/inter/inter.css")
 = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
 = stylesheet_link_tag "application", "data-turbo-track": "reload"
 = javascript_importmap_tags
+
+
