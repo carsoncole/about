@@ -1,11 +1,15 @@
 !!!
-%html
+%html(lang="#{ I18n.default_locale }")
   %head
     = render 'shared/head'
 
-  %body.m-7.font-serif.dark:text-slate-100.dark:bg-slate-950
+  %body.font-sans.my-8.dark:text-slate-100.bg-slate-50.dark:bg-slate-900
     %div.flex.justify-center
-      %div(class='lg:w-2/3')
+      %div.bg-white.py-10.px-20.dark:bg-slate-950(class='lg:w-4/5')
+        %div.mb-7= render 'shared/nav'
+
         = yield
 
+    %div.flex.justify-center
+      %div(class='lg:w-4/5')
         = render 'shared/footer'
