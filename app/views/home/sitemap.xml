@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://carsonrcole.com</loc>
+    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+  <url>
+    <loc>https://carsoncole.com/experiences</loc>
+    <lastmod><%= Experience.order(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+  <url>
+    <loc>https://carsoncole.com/projects</loc>
+    <lastmod><%= Project.order(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+  <url>
+    <loc>https://carsoncole.com/source</loc>
+    <lastmod><%= Setting.first(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+  <url>
+    <loc>https://carsoncole.com/about</loc>
+    <lastmod><%= Setting.first(updated_at: :desc).first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+  </url>
+</urlset>

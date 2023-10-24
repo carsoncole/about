@@ -17,10 +17,13 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
   get '/about' => 'home#about', as: 'about'
+  get '/source' => 'home#source', as: 'source'
   get '/resume' => 'resume#show', as: 'resume'
+  get '/sitemap' => 'home#sitemap', as: 'sitemap'
 
 
-  resources :projects, only: :show
+  resources :projects, only: [:show, :index]
+  resources :experiences, only: :index
 
   namespace :admin do
     resources :settings, :projects, :experiences, :educations
