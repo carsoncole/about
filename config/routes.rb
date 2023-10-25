@@ -16,14 +16,26 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
-  get '/about' => 'home#about', as: 'about'
-  get '/source' => 'home#source', as: 'source'
+
+
   get '/resume' => 'resume#show', as: 'resume'
   get '/sitemap' => 'home#sitemap', as: 'sitemap'
 
+  if PROJECTS_DISPLAYED
+    resources :projects, only: [:show, :index]
+  end
 
-  resources :projects, only: [:show, :index]
-  resources :experiences, only: :index
+  if EXPERIENCES_DISPLAYED
+    resources :experiences, only: :index
+  end
+
+  if ABOUT_DISPLAYED
+    get '/about' => 'home#about', as: 'about'
+  end
+
+  if SOURCE_DISPLAYED
+    get '/source' => 'home#source', as: 'source'
+  end
 
   namespace :admin do
     resources :settings, :projects, :experiences, :educations
