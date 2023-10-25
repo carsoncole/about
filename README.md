@@ -12,11 +12,17 @@ Some of the new features (Rails 7.0+) utilized are:
 
 ## Installation
 
+### Create a user
+
 User sign-up is open when first running the app. Once you've registered yourself as the primary user, you'll want to change the `clearance.rb` initializer to no longer permit signups.
 
 ```
   config.allow_sign_up = false
 ```
+
+## Sections can be configured to display
+
+All sections are configured by default to display. Any section can be removed by updating `config/initializers/constants.rb`.
 
 ### Docker
 
