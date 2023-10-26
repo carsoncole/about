@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/sitemap' => 'home#sitemap', as: 'sitemap'
 
   if PROJECTS_DISPLAYED
-    resources :projects, only: [:show, :index]
+    resources :projects, only: [:index]
   end
 
   if EXPERIENCES_DISPLAYED
