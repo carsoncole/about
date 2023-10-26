@@ -11,6 +11,7 @@
 
 
     - if signed_in?
+      %span.text-center.text-slate-200= '|'
       - if Setting.first
         %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
       - else

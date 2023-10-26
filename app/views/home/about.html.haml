@@ -1,11 +1,18 @@
-%div.grid.grid-cols-3
+%h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.mb-10.text-4xl.md:text-5xl(class='md:w-4/5')
+  %div.leading-tight.md:leading-tight= Setting.first.about_headline
+
+- if Setting.first.about_subheading.present?
+  %h2.text-xl.mb-20.max-w-prose.text-slate-500
+    = Setting.first.about_subheading
+
+- else
+  %div.mb-10 &nbsp;
+
+%div.grid.grid-cols-3.gap-6
   %div.col-span-3.md:col-start-1.md:col-span-2
-    %section.mb-12
-      %h1.flex.font-bold.tracking-tight.mb-10.text-4xl.text-slate-900.dark:text-slate-200.pb-3
-        / %div.mr-3= render 'shared/fingerprint'
-        %div= Setting.first.about_headline
 
 
+  %div
     - if Setting&.first&.linkedin_url.present?
       %div.inline-block.font-medium
         = link_to Setting&.first&.linkedin_url, target: '_blank' do

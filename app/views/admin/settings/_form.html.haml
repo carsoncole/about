@@ -1,62 +1,79 @@
-%div.w-full.max-w-lg
-  = form_for [:admin, @setting], class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" do |f|
-    - if @setting.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@setting.errors.count, "error")} prohibited this setting from being saved:"
-        %ul
-          - @setting.errors.full_messages.each do |message|
-            %li= message
 
-    .mb-5
-      .block.text-gray-700.text-sm.font-bold.mb-2= f.label :name
-      = f.text_field :name, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+= form_for [:admin, @setting], class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" do |f|
+  - if @setting.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@setting.errors.count, "error")} prohibited this setting from being saved:"
+      %ul
+        - @setting.errors.full_messages.each do |message|
+          %li= message
 
+  %div.md:columns-2
 
-    .mb-3= f.label :home_headline
-    = f.text_area :home_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+    %div
 
+      .mb-5
+        .block.text-gray-700.text-sm.font-bold.mb-2= f.label :name
+        = f.text_field :name, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
-    .mb-3= f.label :meta_description
-    = f.text_field :meta_description, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :home_headline
+        = f.text_area :home_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :meta_description
+        = f.text_field :meta_description, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
-    .mb-3= f.label :address
-    = f.text_field :address, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :address
+        = f.text_field :address, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :email
+        = f.text_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
-    .mb-3= f.label :email
-    = f.text_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :phone
+        = f.text_field :phone, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :linkedin_url
+        = f.text_field :linkedin_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
-    .mb-3= f.label :phone
-    = f.text_field :phone, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :github_url
+        = f.text_field :github_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :portfolio_url
+        = f.text_field :portfolio_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
 
-    .mb-3= f.label :linkedin_url
-    = f.text_field :linkedin_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .mb-3= f.label :github_url
-    = f.text_field :github_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-
-    .mb-3= f.label :portfolio_url
-    = f.text_field :portfolio_url, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-
-    .mb-3= f.label :summary
-    = f.text_area :summary, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .mb-3= f.label :projects_headline
-    = f.text_area :projects_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .mb-3= f.label :experiences_headline
-    = f.text_area :experiences_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .mb-3= f.label :about_headline
-    = f.text_area :about_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .mb-3= f.label :source_headline
-    = f.text_area :source_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-
-    .actions
-      = f.submit 'Save', class: 'btn btn-primary'
+    %div
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :summary
+        = f.text_area :summary, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 7
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :projects_headline
+        = f.text_area :projects_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 6
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :projects_subheading
+        = f.text_area :projects_subheading, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 3
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :experiences_headline
+        = f.text_area :experiences_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 6
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :experiences_subheading
+        = f.text_area :experiences_subheading, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 3
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :about_headline
+        = f.text_area :about_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 6
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :about_subheading
+        = f.text_area :about_subheading, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 3
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :source_headline
+        = f.text_area :source_headline, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 6
+      .mb-5
+        .mb-3.font-medium.text-sm= f.label :source_subheading
+        = f.text_area :source_subheading, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', rows: 3
+      .actions
+        = f.submit 'Save', class: 'rounded rounded-lg border p-3 bg-slate-100'
