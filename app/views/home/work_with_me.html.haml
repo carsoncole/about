@@ -1,9 +1,9 @@
 %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.mb-10.text-4xl.md:text-5xl(class='md:w-4/5')
-  %div.leading-tight.md:leading-tight= Setting.first.about_headline
+  %div.leading-tight.md:leading-tight= Setting.first.work_with_me_headline
 
-- if Setting.first.about_subheading.present?
+- if Setting.first.work_with_me_subheading.present?
   %h2.text-xl.mb-20.max-w-prose.text-slate-500
-    = Setting.first.about_subheading
+    = Setting.first.work_with_me_subheading
 
 - else
   %div.mb-10 &nbsp;

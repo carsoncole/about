@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_26_164955) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_01_193534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,12 +65,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_26_164955) do
     t.string "github_url"
     t.string "projects_headline"
     t.string "experiences_headline"
-    t.string "about_headline"
+    t.string "work_with_me_headline"
     t.string "source_headline"
     t.string "projects_subheading"
     t.string "experiences_subheading"
     t.string "source_subheading"
-    t.string "about_subheading"
+    t.string "work_with_me_subheading"
   end
 
   create_table "taggings", force: :cascade do |t|

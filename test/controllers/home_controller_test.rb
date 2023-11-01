@@ -1,15 +1,31 @@
 require "test_helper"
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  setup do
     create(:setting)
+    create_list(:experience, 3)
+    create_list(:project, 4)
+  end
+
+
+  test "should get index" do
     get root_url
     assert_response :success
   end
 
-  # test "should not get index" do
-  #   get root_url
-  #   follow_redirect!
-  #   assert_redirected_to :sign_in
-  # end
+  test "should get work with me" do
+    get work_with_me_url
+    assert_response :success
+  end
+
+  test "should get source" do
+    get source_url
+    assert_response :success
+  end
+
+  test "should get sitemap" do
+    get "/sitemap.xml"
+    assert_response :success
+  end
+
 end
