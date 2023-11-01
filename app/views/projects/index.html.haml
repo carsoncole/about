@@ -10,15 +10,15 @@
 
 
 
-%div.flex.justify-center.mb-12.border.border-slate-4.bg-slate-100.p-8
-  %div
+%div.flex.justify-center.mb-12
+  %div.border.border-slate-4.bg-slate-100.p-8
     %h2.text-2xl.font-bold.mb-4 Example Hosted Project
     %p.text-sm.mb-5
       CarsonRCole.com uses the
       = link_to 'About', "https://github.com/carsoncole/about"
       project. I've tried to use the latest and the greatest from Ruby on Rails.
 
-    %div.flex.justify-end
+    %div.flex.justify-end.text-sm
       %div.py-2.px-7.bg-slate-400.rounded.hover:bg-slate-500
         = link_to 'See more', source_path, class: 'text-slate-100'
         &#8594;

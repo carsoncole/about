@@ -1,0 +1,36 @@
+%h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.mb-10.text-4xl.md:text-5xl(class='md:w-4/5')
+  %div.leading-tight.md:leading-tight= Setting.first.about_headline
+
+- if Setting.first.about_subheading.present?
+  %h2.text-xl.mb-20.max-w-prose.text-slate-500
+    = Setting.first.about_subheading
+
+- else
+  %div.mb-10 &nbsp;
+
+%div.md:flex.justify-evenly
+  %div.border.py-4.px-5.rounded-xl.hover:bg-slate-500.hover:text-slate-100.mb-5
+    %h2.font-medium.text-lg.aline-middle
+      = link_to asset_path('resume.pdf'), download: 'resume.pdf', target: '_blank', class: 'hover:text-slate-100' do
+        .inline-block.align-middle Download my resume
+        .inline-block.align-middle= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle text-slate-500'
+
+
+  %div
+    .font-medium
+      - if Setting&.first&.email.present?
+        = link_to Setting&.first&.email, class: 'inline-block align-middle' do
+          %div.mr-2.inline-block
+            = render 'shared/email_svg'
+        = link_to "mailto: #{Setting&.first&.email}", class: 'inline-block text-slate-900' do
+          %div
+            = Setting&.first&.email
+
+    .font-medium
+      - if Setting&.first&.phone.present?
+        %div.mr-2.fill-slate-500.inline-block.align-middle
+          = render 'shared/phone_svg'
+        %div.inline-block
+          = link_to Setting&.first&.phone, "tel:#{Setting&.first&.phone}"
+
+

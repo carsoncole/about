@@ -26,12 +26,12 @@ Rails.application.routes.draw do
     resources :experiences, only: :index
   end
 
-  if ABOUT_DISPLAYED
-    get '/about' => 'home#about', as: 'about'
-  end
-
   if SOURCE_DISPLAYED
     get '/source' => 'home#source', as: 'source'
+  end
+
+  if WORK_WITH_ME_DISPLAYED
+    get '/work-with-me' => 'home#work_with_me', as: 'work_with_me'
   end
 
   namespace :admin do

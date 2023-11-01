@@ -8,8 +8,8 @@
         %span.p-1= link_to "Projects", projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
       - if EXPERIENCES_DISPLAYED && controller_name != 'experiences'
         %span.p-1= link_to "Experience", experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-      - if ABOUT_DISPLAYED && action_name != 'about'
-        %span.p-1= link_to "About", about_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      - if WORK_WITH_ME_DISPLAYED && action_name != 'about'
+        %span.p-1= link_to "Work with me", work_with_me_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
 
       - if signed_in?
