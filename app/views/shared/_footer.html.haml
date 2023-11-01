@@ -1,25 +1,39 @@
 %footer.mt-10
-  %nav.flex.flex-1.space-x-4.font-medium.text-sm
+  %div.md:flex
 
-    %span.p-1= link_to "Home", root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-    - if PROJECTS_DISPLAYED && controller_name != 'projects'
-      %span.p-1= link_to "Projects", projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-    - if EXPERIENCES_DISPLAYED && controller_name != 'experiences'
-      %span.p-1= link_to "Experience", experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-    - if ABOUT_DISPLAYED && action_name != 'about'
-      %span.p-1= link_to "About", about_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+    %nav.flex-auto.font-medium.text-sm.mb-5
+
+      %span.p-1= link_to "Home", root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      - if PROJECTS_DISPLAYED && controller_name != 'projects'
+        %span.p-1= link_to "Projects", projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      - if EXPERIENCES_DISPLAYED && controller_name != 'experiences'
+        %span.p-1= link_to "Experience", experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      - if ABOUT_DISPLAYED && action_name != 'about'
+        %span.p-1= link_to "About", about_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
 
-    - if signed_in?
-      %span.text-center.text-slate-200= '|'
-      - if Setting.first
-        %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-      - else
-        %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      - if signed_in?
+        %span.text-center.text-slate-200= '|'
+        - if Setting.first
+          %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        - else
+          %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
-      %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-    / - else
-    /   %span.p-1= link_to "Sign in", sign_in_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+    %div.text-sm.flex-auto.text-center.md:text-end.tracking-tight.text-slate-500
+      - if Setting&.first&.linkedin_url.present?
+        %div.inline-block
+          = link_to Setting&.first&.linkedin_url, target: '_blank', class: 'inline-block align-middle' do
+            = image_tag 'linkedin.svg', width: '24px', class: 'text-slate-100'
+      - if Setting&.first&.github_url.present?
+        %div.inline-block
+          = link_to Setting&.first&.github_url, target: '_blank', class: 'inline-block align-middle' do
+            = image_tag 'github.svg', width: '24px', class: 'text-slate-400'
+
+      &copy
+      = Time.now.year.to_s
+      Carson Cole
+
 
 
 

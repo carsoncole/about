@@ -1,11 +1,55 @@
 %div.grid.lg:grid-cols-3.gap-6
   %div.col-start-1.col-span-2
-    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-20.text-4xl.md:text-5xl= Setting&.first&.home_headline || 'Home headline'
+    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-15.text-4xl.md:text-5xl
+      = Setting&.first&.home_headline || 'Home headline'
 
-    %h1.mb-10.text-lg.text-slate-500.max-w-prose
-      = render 'summary'
+  %div.flex.justify-center
+    = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'h-60 w-60 mb-10 ml-4 rounded-xl rotate-6 shadow-xl object-scale-down dark:shadow-gray-800'
 
 
-  %div
-    = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'h-56 w-56 mb-10 ml-4 rounded-xl rotate-6 shadow-xl object-scale-down dark:shadow-gray-800'
+
+%div
+  %h2.mb-10.text-lg.text-slate-500.max-w-prose
+    = render 'summary'
+
+
+
+%div.flex.justify-center
+  %div.justify-center.p-4.mb-10.border-1.border.shadow.rounded-xl(class="w-full lg:w-3/5")
+    %h2.font-medium.text-lg.aline-middle
+      = link_to asset_path('resume.pdf'), download: 'resume.pdf', target: '_blank' do
+        .inline-block.align-middle.text-slate-500 Resume
+        .inline-block.align-middle= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle text-slate-500'
+
+
+
+    %div
+
+
+
+
+
+
+    %div
+      .font-medium
+        - if Setting&.first&.email.present?
+          .inline-block
+            = link_to Setting&.first&.email do
+              %div.mr-3
+                = render 'shared/email_svg'
+          .inline-block
+            = link_to "mailto: #{Setting&.first&.email}", class: 'text-slate-900' do
+              %div
+                = Setting&.first&.email
+
+      .font-medium
+        - if Setting&.first&.phone.present?
+          %div.inline-block
+            %div.mr-3.fill-slate-500
+              = render 'shared/phone_svg'
+          %div.inline-block
+            = Setting&.first&.phone
+
+
+
 

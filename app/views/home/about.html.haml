@@ -8,32 +8,38 @@
 - else
   %div.mb-10 &nbsp;
 
-%div.grid.grid-cols-3.gap-6
-  %div.col-span-3.md:col-start-1.md:col-span-2
-
-
+%div.flex.justify-center.mb-10
   %div
-    - if Setting&.first&.linkedin_url.present?
-      %div.inline-block.font-medium
-        = link_to Setting&.first&.linkedin_url, target: '_blank' do
-          = render 'shared/linkedin_svg'
-    - if Setting&.first&.github_url.present?
-      %div.inline-block
-        = link_to Setting&.first&.github_url, target: '_blank' do
-          = render 'shared/github_svg'
+    %h2.font-medium.text-lg.aline-middle
+      = link_to asset_path('resume.pdf'), download: 'resume.pdf', target: '_blank' do
+        .inline-block.align-middle.text-slate-500 Resume
+        .inline-block.align-middle= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle text-slate-500'
 
-    .mt-4.flex.flex-row.font-medium
-      - if Setting&.first&.email.present?
-        = link_to Setting&.first&.email do
-          %div.mr-3
-            = render 'shared/email_svg'
-        = link_to "mailto: #{Setting&.first&.email}", class: 'text-slate-900' do
-          %div
-            = Setting&.first&.email
+%div.flex.justify-center
+  - if Setting&.first&.linkedin_url.present?
+    %div.inline-block.mr-3
+      = link_to Setting&.first&.linkedin_url, target: '_blank', class: 'inline-block align-middle text-slate-500' do
+        = image_tag 'linkedin.svg', width: '24px'
+  - if Setting&.first&.github_url.present?
+    %div.inline-block
+      = link_to Setting&.first&.github_url, target: '_blank', class: 'inline-block align-middle text-slate-500' do
+        = image_tag 'github.svg', width: '24px'
 
-    .mt-4.flex.flex-row.font-medium
-      - if Setting&.first&.phone.present?
-        %div.mr-3.fill-slate-500
-          = render 'shared/phone_svg'
+%div.flex.justify-center
+  .font-medium
+    - if Setting&.first&.email.present?
+      = link_to Setting&.first&.email do
+        %div.mr-3
+          = render 'shared/email_svg'
+      = link_to "mailto: #{Setting&.first&.email}", class: 'text-slate-900' do
         %div
-          = Setting&.first&.phone
+          = Setting&.first&.email
+
+  .font-medium
+    - if Setting&.first&.phone.present?
+      %div.mr-3.fill-slate-500
+        = render 'shared/phone_svg'
+      %div
+        = Setting&.first&.phone
+
+
