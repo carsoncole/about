@@ -1,16 +1,9 @@
-%footer.mt-10
-  %div.md:flex
+%footer.mt-6
+  %div.lg:flex
 
-    %nav.flex-auto.font-medium.text-sm.mb-5
+    %nav.flex.justify-center.md:justify-start.space-x-2.md:space-x-4.p-2.mb-10.md:mb-20(class='dark:bg-slate-800/90')
 
-      %span.p-1= link_to "Home", root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-      - if PROJECTS_DISPLAYED && controller_name != 'projects'
-        %span.p-1= link_to "Projects", projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-      - if EXPERIENCES_DISPLAYED && controller_name != 'experiences'
-        %span.p-1= link_to "Experience", experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-      - if WORK_WITH_ME_DISPLAYED && action_name != 'about'
-        %span.p-1= link_to "Work with me", work_with_me_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-
+      = render 'shared/nav_items'
 
       - if signed_in?
         %span.text-center.text-slate-200= '|'
@@ -20,7 +13,7 @@
           %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
         %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-    %div.text-sm.flex-auto.text-center.md:text-end.tracking-tight.text-slate-500
+    %div.text-sm.flex-auto.text-center.lg:text-end.tracking-tight.text-slate-500
       - if Setting&.first&.linkedin_url.present?
         %div.inline-block
           = link_to Setting&.first&.linkedin_url, target: '_blank', class: 'inline-block align-middle' do

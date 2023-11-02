@@ -1,0 +1,12 @@
+%div.text-xs.font-medium.antialiased.tracking-tight
+  = link_to 'Home', root_path, class: controller_name == 'home' && action_name == 'index' ? "text-slate-500 font-bold" : nil
+- if EXPERIENCES_DISPLAYED
+  %div.text-xs.font-medium.antialiased.tracking-tight
+    = link_to 'Experience', experiences_path, class: controller_name == 'experiences' ? "text-slate-500 font-bold" : nil
+- if PROJECTS_DISPLAYED
+  %div.text-xs.font-medium.antialiased.tracking-tight
+    = link_to 'Projects', projects_path, class: controller_name == 'projects' ? "text-slate-500 font-bold" : nil
+
+- if WORK_WITH_ME_DISPLAYED
+  %div.text-xs.font-medium.antialiased.tracking-tight
+    = link_to 'Work with me', work_with_me_path, class: controller_name == 'home' && action_name == 'work_with_me' ? "text-slate-500 font-bold" : nil
