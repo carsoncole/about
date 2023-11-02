@@ -3,16 +3,16 @@
     - unless controller_name == 'home' && action_name == 'index'
       = image_tag "profile_photo.jpeg", class: 'hidden md:block h-12 w-12 rounded-full shadow-xl dark:shadow-gray-800'
 
-  %nav.flex.justify-center.md:justify-end.space-x-2.md:space-x-4.text-xs.md:text-sm.font-medium.p-2.mb-20(class='tracking-tight dark:bg-slate-800/90 dark:text-slate-200')
+  %nav.flex.justify-center.md:justify-end.space-x-2.md:space-x-4.text-xs.font-medium.antialiased.p-2.mb-10.md:mb-20(class='tracking-tight dark:bg-slate-800/90')
     %div
-      = link_to 'Home', root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+      = link_to 'Home', root_path, class: controller_name == 'home' && action_name == 'index' ? "text-slate-500 font-bold" : nil
     - if EXPERIENCES_DISPLAYED
       %div
-        = link_to 'Experience', experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        = link_to 'Experience', experiences_path, class: controller_name == 'experiences' ? "text-slate-500 font-bold" : nil
     - if PROJECTS_DISPLAYED
       %div
-        = link_to 'Projects', projects_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        = link_to 'Projects', projects_path, class: controller_name == 'projects' ? "text-slate-500 font-bold" : nil
 
     - if WORK_WITH_ME_DISPLAYED
       %div
-        = link_to 'Work with me', work_with_me_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        = link_to 'Work with me', work_with_me_path, class: controller_name == 'home' && action_name == 'work_with_me' ? "text-slate-500 font-bold" : nil
