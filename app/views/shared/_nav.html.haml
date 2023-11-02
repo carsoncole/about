@@ -1,9 +1,9 @@
 %div.flex
-  %div.flex-1
+  %div.flex-1.hidden.md:block
     - unless controller_name == 'home' && action_name == 'index'
       = image_tag "profile_photo.jpeg", class: 'hidden md:block h-12 w-12 rounded-full shadow-xl dark:shadow-gray-800'
 
-  %nav.flex.flex-auto.space-x-2.md:space-x-4.justify-center.text-sm.border.rounded-xl.font-medium.shadow-lg.p-2.mb-20.backdrop-blur(class='ring-1 shadow-slate-800/5 ring-slate-900/5 dark:ring-white/10 dark:bg-slate-800/90 dark:text-slate-200')
+  %nav.flex.justify-center.md:justify-end.space-x-2.md:space-x-4.text-xs.md:text-sm.font-medium.p-2.mb-20(class='tracking-tight dark:bg-slate-800/90 dark:text-slate-200')
     %div
       = link_to 'Home', root_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
     - if EXPERIENCES_DISPLAYED
@@ -16,4 +16,3 @@
     - if WORK_WITH_ME_DISPLAYED
       %div
         = link_to 'Work with me', work_with_me_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
-  %div.flex-1
