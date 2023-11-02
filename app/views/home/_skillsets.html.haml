@@ -1,4 +1,4 @@
-%div.text-sm
+%div.flex.flex-wrap.gap-x-2
   - @tags.each do |tag|
-    .skill.border.float-left.m-1.bg-white.p-3.shadow-lg.text-black.py-1.px-4= tag.name
-%div.clear-both
+    .text-xs.border.bg-white.shadow-sm.text-bold.px-2.mb-1.rounded.align-middle(class="py-0.5")= tag.name
+
