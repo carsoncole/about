@@ -8,15 +8,15 @@
 - else
   %div.mb-10 &nbsp;
 
-%div.md:flex.justify-evenly
-  %div.border.py-4.px-5.rounded-xl.hover:bg-slate-500.hover:text-slate-100.mb-5
-    %h2.font-medium.text-lg.aline-middle
+%div.flex.flex-col.md:flex-row.justify-center.md:justify-evenly
+  %div.border.py-2.px-5.text-center.rounded-xl.hover:bg-slate-500.hover:text-slate-100.mb-5
+    %h2.font-medium
       = link_to asset_path('resume.pdf'), download: 'resume.pdf', target: '_blank', class: 'hover:text-slate-100' do
         .inline-block.align-middle Download my resume
         .inline-block.align-middle= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle text-slate-500'
 
 
-  %div
+  %div.align-middle
     .font-medium
       - if Setting&.first&.email.present?
         = link_to Setting&.first&.email, class: 'inline-block align-middle' do
