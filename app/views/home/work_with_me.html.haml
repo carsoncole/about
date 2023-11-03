@@ -13,7 +13,7 @@
     %h2.font-medium
       = link_to asset_path('resume.pdf'), download: 'resume.pdf', target: '_blank', class: 'hover:text-slate-100' do
         .inline-block.align-middle Download my resume
-        .inline-block.align-middle= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle text-slate-500'
+        .inline-block.align-middle.dark:hidden= image_tag 'download.svg', width: '19px', class: 'inline-block align-middle'
 
 
   %div.align-middle
@@ -22,7 +22,7 @@
         = link_to Setting&.first&.email, class: 'inline-block align-middle' do
           %div.mr-2.inline-block
             = render 'shared/email_svg'
-        = link_to "mailto: #{Setting&.first&.email}", class: 'inline-block text-slate-900' do
+        = link_to "mailto: #{Setting&.first&.email}", class: 'inline-block' do
           %div
             = Setting&.first&.email
 
