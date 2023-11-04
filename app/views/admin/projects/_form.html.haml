@@ -6,26 +6,30 @@
         - @project.errors.full_messages.each do |message|
           %li= message
 
-  .form-group.mb-3.mb-3
+  .mb-3.mb-3
     .mb-2= f.label :name
     = f.text_field :name, class: 'form-control'
-  .form-group.mb-3
+  .mb-3
     .mb-2= f.label :source_url
     = f.text_field :source_url, class: 'form-control'
-  .form-group.mb-3
+  .mb-3
     .mb-2= f.label :description
     = f.text_area :description, class: 'form-control', rows: 10
-  .form-group.mb-3
+  .mb-3
     = f.label :image_name_and_extension
     .mb-2.text-muted Images should be saved in 'app/assets/images'
     = f.text_field :image_url, class: 'form-control'
-  .form-group.mb-3
+  .mb-3
     .mb-2= f.label :working_url
     = f.text_field :working_url, class: 'form-control'
   .row
     .col-lg-3
-      .form-group.mb-3
+      .mb-3
         .mb-2= f.label :order
         = f.number_field :order, class: 'form-control'
+  .mb-3
+    = f.label :skillset
+    .text-muted.mb-2 Skills, comma-separated
+    = f.text_field :skillset, class: 'form-control'
   .actions
     = f.submit 'Save', class: 'btn btn-primary'

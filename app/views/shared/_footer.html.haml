@@ -6,13 +6,13 @@
       = render 'shared/nav_items'
 
       - if signed_in?
-        %span.text-center.text-slate-200= '|'
+        %span.text-center.text-slate-200.text-xs= '|'
         - if Setting.first
-          %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+          %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
         - else
-          %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+          %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
-        %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+        %span.p-1= link_to "Sign out", sign_out_path, method: :delete, data: { "turbo-method": :delete }, class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
     %div.text-sm.flex-auto.text-center.lg:text-end.tracking-tight.text-slate-500
       - if Setting&.first&.linkedin_url.present?
         %div.inline-block

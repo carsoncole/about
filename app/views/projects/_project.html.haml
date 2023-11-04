@@ -9,6 +9,11 @@
 
   %p.font-normal.text-sm.mb-3.text-gray-700.dark:text-gray-400= project.description
 
+  %div.flex.flex-wrap.gap-x-2.mb-2
+    - project.skill_counts.order(taggings_count: :desc).each do |skill|
+      %div.text-xs.border.border-slate-200.py-1.px-2.text-slate-500
+        = skill
+
   %p
     = link_to project.source_url, target: '_blank', class: 'text-slate-500 text-sm' do
       .inline-block

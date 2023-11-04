@@ -20,6 +20,10 @@ class Admin::ProjectsController < Admin::AdminController
 
     respond_to do |format|
       if @project.save
+        if @project.skillset.present?
+          @project.skill_list.add(@project.skillset, parse: true)
+          @project.save
+        end
         format.html { redirect_to admin_projects_url, notice: "Project was successfully created." }
         format.json { render :show, status: :created, location: @project }
       else
@@ -33,6 +37,10 @@ class Admin::ProjectsController < Admin::AdminController
   def update
     respond_to do |format|
       if @project.update(project_params)
+        if @project.skillset.present?
+          @project.skill_list.add(@project.skillset, parse: true)
+          @project.save
+        end
         format.html { redirect_to admin_projects_url, notice: "Project was successfully updated." }
         format.json { render :show, status: :ok, location: @project }
       else
@@ -60,6 +68,6 @@ class Admin::ProjectsController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :source_url, :description, :image_url, :working_url, :order)
+      params.require(:project).permit(:name, :source_url, :description, :image_url, :working_url, :order, :skillset)
     end
 end
