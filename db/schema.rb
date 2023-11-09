@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_01_193534) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_09_220226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,7 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_193534) do
     t.string "email"
     t.string "phone"
     t.text "home_headline"
-    t.string "status"
     t.string "meta_description"
     t.string "meta_title"
     t.string "host_url"
@@ -71,6 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_193534) do
     t.string "experiences_subheading"
     t.string "source_subheading"
     t.string "work_with_me_subheading"
+    t.integer "status"
   end
 
   create_table "taggings", force: :cascade do |t|
