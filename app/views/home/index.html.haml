@@ -1,10 +1,10 @@
 %div.lg:grid.lg:grid-cols-3.gap-6
   %div.col-start-1.col-span-2
-    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.mb-15.text-4xl.md:text-5xl
+    %h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.leading-tight.md:leading-tight.text-4xl.md:text-5xl
       = Setting&.first&.home_headline || 'Home headline'
 
   %div.flex.justify-center.lg:justify-end
-    = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'h-40 w-40 lg:h-60 lg:w-60 my-10 ml-0 lg:ml-4 rounded-xl rotate-0 lg:rotate-6 shadow-xl object-scale-down dark:shadow-gray-800'
+    = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'h-50 lg:h-60 lg:w-60 my-10 ml-0 lg:ml-4 rounded-xl rotate-0 lg:rotate-6 shadow-xl object-scale-down dark:shadow-gray-800'
 
 
 - if Setting&.first&.status
