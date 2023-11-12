@@ -7,6 +7,10 @@
   %div.text-xs.font-medium.antialiased.tracking-tight
     = link_to 'Projects', projects_path, class: controller_name == 'projects' ? "text-slate-500 font-bold" : "dark:text-slate-100"
 
+%div.text-xs.font-medium.antialiased.tracking-tight
+  = link_to 'Solutions', solutions_path, class: controller_name == 'projects' ? "text-slate-500 font-bold" : "dark:text-slate-100"
+
+
 - if WORK_WITH_ME_DISPLAYED
   %div.text-xs.font-medium.antialiased.tracking-tight.border-2.rounded.py-1.px-2.border-lime-400.bg-lime-300.align-middle
     = link_to 'Work with me', work_with_me_path, class: controller_name == 'home' && action_name == 'work_with_me' ? "text-slate-700 font-bold" : 'text-slate-700 font-bold hover:text-slate-500'

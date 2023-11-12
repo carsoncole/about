@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     @title = 'Source | ' + Setting.first.name
   end
 
+  def solutions
+    @title = 'Solutions | ' + Setting.first.name
+  end
+
   def sitemap
   end
 end
