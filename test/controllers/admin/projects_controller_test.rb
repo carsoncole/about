@@ -3,7 +3,7 @@ require "test_helper"
 class Admin::ProjectsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @project = create(:project)
-    @admin = create(:admin)
+    @admin = create(:user)
   end
 
   test "should get index" do

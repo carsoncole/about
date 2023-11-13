@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://carsonrcole.com</loc>
-    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+    <lastmod><%=File.mtime("app/views/home/index.html.haml").strftime("%Y-%m-%d") %></lastmod>
   </url>
   <url>
     <loc>https://carsoncole.com/experiences</loc>
@@ -14,10 +14,14 @@
   </url>
   <url>
     <loc>https://carsoncole.com/source</loc>
-    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+    <lastmod><%= File.mtime("app/views/home/source.html.haml").strftime("%Y-%m-%d") %></lastmod>
+  </url>
+  <url>
+    <loc>https://carsoncole.com/solutions</loc>
+    <lastmod><%= File.mtime("app/views/home/sitemap.xml.erb").strftime("%Y-%m-%d") %></lastmod>
   </url>
   <url>
     <loc>https://carsoncole.com/work-with-me</loc>
-    <lastmod><%= Setting.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+    <lastmod><%= File.mtime("app/views/home/work_with_me.html.haml").strftime("%Y-%m-%d") %></lastmod>
   </url>
 </urlset>

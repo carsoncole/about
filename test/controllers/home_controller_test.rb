@@ -13,6 +13,11 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get solutions" do
+    get solutions_url
+    assert_response :success
+  end
+
   test "should get work with me" do
     get work_with_me_url
     assert_response :success

@@ -2,7 +2,7 @@ require "test_helper"
 
 class Admin::ExperiencesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @admin = create(:admin)
+    @admin = create(:user)
   end
 
   test "should get index" do

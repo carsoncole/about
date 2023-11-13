@@ -2,8 +2,8 @@ require "test_helper"
 
 class Admin::SettingsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @admin = create(:user)
     @setting = create(:setting)
-    @admin = create(:admin)
   end
 
   test "should get index" do
