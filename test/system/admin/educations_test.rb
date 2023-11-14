@@ -2,46 +2,50 @@ require "application_system_test_case"
 
 class EducationsTest < ApplicationSystemTestCase
   setup do
-    @admin_education = admin_educations(:one)
+    create(:setting)
+    @user = create(:user)
+    @education = create(:education)
   end
 
   test "visiting the index" do
-    visit admin_educations_url
-    assert_selector "h1", text: "Educations"
+    visit admin_educations_url(as: @user)
+    assert_selector "h1", text: "Education"
   end
 
   test "should create education" do
-    visit admin_educations_url
-    click_on "New education"
+    visit admin_educations_url(as: @user)
+    click_on "New Education"
 
-    fill_in "End date", with: @admin_education.end_date
-    fill_in "Name", with: @admin_education.name
-    fill_in "Start date", with: @admin_education.start_date
-    fill_in "Title", with: @admin_education.title
-    click_on "Create Education"
+    fill_in "End date", with: @education.end_date
+    fill_in "Name", with: @education.name
+    fill_in "Start date", with: @education.start_date
+    fill_in "Title", with: @education.title
+    click_on "Save"
 
-    assert_text "Education was successfully created"
-    click_on "Back"
+    within '#flash' do
+      assert_text "Education was successfully created"
+    end
   end
 
   test "should update Education" do
-    visit admin_education_url(@admin_education)
-    click_on "Edit this education", match: :first
+    visit admin_educations_url(@admin, as: @user)
+    click_on "Edit", match: :first
 
-    fill_in "End date", with: @admin_education.end_date
-    fill_in "Name", with: @admin_education.name
-    fill_in "Start date", with: @admin_education.start_date
-    fill_in "Title", with: @admin_education.title
-    click_on "Update Education"
+    fill_in "End date", with: @education.end_date
+    fill_in "Name", with: @education.name
+    fill_in "Start date", with: @education.start_date
+    fill_in "Title", with: @education.title
+    click_on "Save"
 
     assert_text "Education was successfully updated"
-    click_on "Back"
   end
 
   test "should destroy Education" do
-    visit admin_education_url(@admin_education)
-    click_on "Destroy this education", match: :first
+    visit admin_educations_url(as: @user)
+    click_on "Destroy", match: :first
 
-    assert_text "Education was successfully destroyed"
+    within '#flash' do
+      assert_text "Education was successfully destroyed"
+    end
   end
 end

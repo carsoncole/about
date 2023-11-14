@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :settings, :projects, :experiences, :educations
+    resources :projects, :experiences
+
+    resources :educations, only: [:index, :edit, :new, :create, :update, :destroy ]
+    resources :settings, only: [:edit, :new, :update, :create]
   end
 end

@@ -1,8 +1,5 @@
 class Admin::SettingsController < Admin::AdminController
-  before_action :set_setting, only: %i[ show edit update destroy ]
-
-  def show
-  end
+  before_action :set_setting, only: %i[ edit update ]
 
   def new
     @setting = Setting.new
@@ -16,7 +13,7 @@ class Admin::SettingsController < Admin::AdminController
 
     respond_to do |format|
       if @setting.save
-        format.html { redirect_to root_url(@setting), notice: "Setting was successfully created." }
+        format.html { redirect_to edit_admin_setting_url(@setting), notice: "Setting was successfully created." }
         format.json { render :show, status: :created, location: @setting }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -28,21 +25,12 @@ class Admin::SettingsController < Admin::AdminController
   def update
     respond_to do |format|
       if @setting.update(setting_params)
-        format.html { redirect_to root_url(@setting), notice: "Setting was successfully updated." }
+        format.html { redirect_to edit_admin_setting_path(@setting), notice: "Setting was successfully updated." }
         format.json { render :show, status: :ok, location: @setting }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @setting.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  def destroy
-    @setting.destroy
-
-    respond_to do |format|
-      format.html { redirect_to settings_url, notice: "Setting was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
