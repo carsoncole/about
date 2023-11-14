@@ -1,0 +1,6 @@
+- if flash[:notice].present?
+  %div#flash(class='mb-5 bg-green-200 font-bold pl-5 py-2')
+    = flash[:notice]
+- if flash[:alert].present?
+  %div#flash(class='mb-5 bg-red-200 font-bold pl-5 py-2')
+    = flash[:alert]
