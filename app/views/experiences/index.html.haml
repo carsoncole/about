@@ -1,11 +1,11 @@
-%h1.text-slate-800.dark:text-slate-100.font-bold.tracking-tight.mb-10.text-4xl.md:text-5xl(class='md:w-4/5')
-  %div.leading-tight.md:leading-tight= Setting.first.experiences_headline
+%h1(class='text-slate-800 dark:text-slate-100 font-bold tracking-tight mb-10 text-4xl leading-11 md:text-5xl md:leading-13 md:w-4/5')
+  = Setting.first.experiences_headline
 
 - if Setting.first.experiences_subheading.present?
-  %h2.text-xl.mb-20.max-w-prose.text-slate-500
+  %h2(class='font-light tracking-tight max-w-prose text-xl text-slate-700 dark:text-slate-100 mb-20')
     = Setting.first.experiences_subheading
 - else
-  %div.mb-10 &nbsp;
+  %div.mb-20 &nbsp;
 
 %div.md:grid.md:grid-cols-4.md:gap-10
   %div.col-span-4.md:col-start-1.md:col-span-3

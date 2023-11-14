@@ -12,6 +12,13 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      lineHeight: {
+        'extra-loose': '2.5',
+        '11': '2.5rem',
+        '12': '3rem',
+        '13': '3.5rem'
+      }
+
     },
   },
   plugins: [
