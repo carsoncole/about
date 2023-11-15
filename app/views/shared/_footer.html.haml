@@ -8,7 +8,7 @@
       - if signed_in?
         %span.text-center.text-slate-200.text-xs= '|'
         - if Setting.first
-          %span.p-1= link_to "Admin", admin_experiences_path, class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
+          %span.p-1= link_to "Admin", edit_admin_setting_path(Setting.first), class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
         - else
           %span.p-1= link_to "Settings", new_admin_setting_path, class: 'text-xs text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-slate-850'
 
