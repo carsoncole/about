@@ -3,5 +3,5 @@
     - unless controller_name == 'home' && action_name == 'index'
       = image_tag "profile_photo.jpeg", class: 'hidden md:block h-12 w-12 rounded-full shadow-xl dark:shadow-gray-800'
 
-  %nav.flex.justify-center.md:justify-end.space-x-2.md:space-x-4.p-2(class='items-center')
+  %nav.flex.justify-center.flex-wrap.md:justify-end.space-x-2.md:space-x-4.p-2(class='items-center')
     = render 'shared/nav_items'
