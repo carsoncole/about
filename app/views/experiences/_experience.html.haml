@@ -14,7 +14,7 @@
     %div
       - experience.skill_counts.order(taggings_count: :desc).each do |skill|
 
-        %div.float-left.text-xs.border.border-slate-200.py-1.px-2.mr-2.mb-2.text-slate-500
+        %div(class="float-left text-xs border border-slate-300 dark:border-slate-400 py-1 px-2 mr-2 mb-2 text-slate-500 dark:text-slate-200 dark:bg-slate-600 bg-slate-200 rounded-lg")
           = skill
 
       %div.clear-both

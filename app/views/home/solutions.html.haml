@@ -8,7 +8,7 @@
 
 %div(class='mb-4')
   %article(class='bg-red-50 py-10 md:py-16 pb-10 px-6 md:px-24 lg:px-24 lg:mx-32')
-    %h1(class='mb-10 md:mb-14 text-3xl font-bold tracking-tight text-center') Upgrading Ruby on Rails.
+    %h1(class='mb-10 md:mb-14 text-3xl font-bold tracking-tight text-center text-slate-700') Upgrading Ruby on Rails.
 
     %div(class='')
       %div
@@ -20,15 +20,15 @@
           To address this challenge, the strategy involved a step-wise approach. The initial phase focused on refactoring the application, removing less-utilized older gems to reduce potential issues during the upgrade. Subsequently, attention shifted to upgrading remaining gems incrementally, addressing test issues along the way, and finally reaching the desired Rails version. This method aimed to ensure a successful upgrade while prioritizing safety and minimizing adverse impacts on the core business.
 
     %div(class='flex justify-center mb-6')
-      %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200')
+      %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200 dark:bg-gray-400')
         Time to completion
-      %div(class='font-bold border bg-white pl-4 md:pr-5 pr-5 py-2')
+      %div(class='font-bold border bg-white dark:bg-gray-200 text-gray-700 pl-4 md:pr-5 pr-5 py-2')
         1-6 months
     / %div(class='flex justify-center')
     /   = image_tag "ror-logo.svg", width: '150'
 
     %div(class='flex justify-center')
-      %div(class='text-4xl font-bold tracking-tight')
+      %div(class='text-gray-800 text-4xl font-bold tracking-tight')
         4.3
         =succeed(" 7.1") do
           = '==>'
@@ -36,7 +36,7 @@
 
 %div(class='grid md:grid-cols-2 md:gap-4')
   %article(class='bg-gray-900 dark:bg-gray-700 text-white mb-4 md:mb-0 py-16')
-    %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') White labeling a SaaS offering.
+    %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-100') White labeling a SaaS offering.
 
     %p(class='font-bold text-sm max-w-prose text-white antialiased mb-6 px-5 md:px-12')
       The task involves hosting multiple domains, potentially numbering in the hundreds or thousands, all pointing to a multi-tenant application. The challenge is to automate client configuration and accomplish the implementation within minutes.
@@ -48,9 +48,9 @@
       Depending on the number of expected SaaS clients, automated domain registration can be handled by a local NGINX service acting as the domain endpoint, that routes to the intended service, or you can use an external service such as Cloudflare, or with fewer domains, Heroku. All are solutions that can be fully automated and with implementation occuring within minutes. It is important to do this correctly as reversing course in the future can be extrememly difficult and distruptive for clients.
 
     %div(class='flex justify-center mb-10')
-      %div(class='font-bold pl-3 md:pl-4 pr-2 border br-none border-gray-500 dark:border-gray-200 py-2 bg-gray-900 dark:bg-gray-300')
+      %div(class='font-bold pl-3 md:pl-4 pr-2 border br-none border-gray-900 dark:border-gray-300 py-2 bg-gray-900 dark:bg-gray-300 text-gray-800')
         Time to completion
-      %div(class='font-bold border border-gray-500 dark:border-gray-200 bg-white text-gray-900  pl-4 md:pr-5 pr-5 py-2')
+      %div(class='font-bold border border-white dark:border-gray-500 bg-white dark:bg-gray-500 text-gray-200  pl-4 md:pr-5 pr-5 py-2')
         1 month
 
 
@@ -64,7 +64,7 @@
 
   %article(class='bg-gray-900 dark:bg-gray-700 text-white mb-4 md:mb-0')
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') Offering a RESTful API.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-100') Offering a RESTful API.
 
       %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
         There is a growing demand from clients for API access to integrate your services into their own systems. This presents a significant opportunity as your service stands to be remarketed by clients, thereby significantly expanding the reach of your offering.
@@ -78,10 +78,10 @@
           = link_to "Yalit", "https://github.com/carsoncole/yalit"
         an open-source application that I open-sourced for white-labeling API documentation on a custom domain.
 
-      %div(class='flex justify-center mb-6')
-        %div(class='font-bold pl-3 md:pl-4 pr-2 border br-none border-gray-500 dark:border-gray-200 py-2 bg-gray-900 dark:bg-gray-300')
+      %div(class='flex justify-center mb-8')
+        %div(class='font-bold pl-3 md:pl-4 pr-2 border br-none border-gray-900 dark:border-gray-300 py-2 bg-gray-900 dark:bg-gray-300 text-gray-800')
           Time to completion
-        %div(class='font-bold border border-gray-500 dark:border-gray-200 bg-white text-gray-900 pl-4 md:pr-5 pr-5 py-2')
+        %div(class='font-bold border border-white dark:border-gray-500 bg-white dark:bg-gray-500 text-gray-200  pl-4 md:pr-5 pr-5 py-2')
           1-3 weeks
 
 
@@ -94,9 +94,9 @@
 
   %article(class='bg-gray-100 mb-4 md:mb-0')
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') Recurring charges and billing.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-700') Recurring charges and billing.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         Billing needs to be fixed to handle recurring charges, special offerings, and to reduce interchange and merchant fees.
 
       %p(class='font-light text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
@@ -106,33 +106,32 @@
         The solutions include third-party providers, such as Chargebee or Recurly, which can be implemented quickly and has the lowest upfront cost, however this the most long-term expensive and least flexible. Alternatively, you can roll your own service utilizing Stripe, and this would be the least expensive, however it will have a higher upfront and ongoing development cost, but it does offer the most flexibility in offering recurring and customized charges.
 
       %div(class='flex justify-center mb-6 px-5 md:px-12')
-        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200')
+        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200 dark:bg-gray-400')
           Time to completion
-        %div(class='font-bold border bg-white pl-4 md:pr-5 pr-5 py-2')
+        %div(class='font-bold border bg-white dark:bg-gray-200 text-gray-700 pl-4 md:pr-5 pr-5 py-2')
           1-2 months
 
-      %div(class='flex justify-center')
-
+      %div(class='flex justify-center text-slate-900')
         <svg fill="none" stroke="currentColor" stroke-width="1.5" class="w-24 h-24" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5z"/></svg>
 
 
   %article(class='bg-blue-50 mb-4 md:mb-0')
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') Monolith to microservice.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-700') Monolith to microservice.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         Your Ruby on Rails has grown into a large monothithic application, with performance lagging on certain features, bringing down the overall appliation's response times.
 
-      %p(class='font-light text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-light text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         The benefits of a monolithic application are numerous, particularly for smaller development teams where overlapping work is minimized and deploys can be easily coordinated. There are cost benefits due to fewer instances deployed as well as development time necessary to manage multiple codebases. Microservices have the benefits of simplicity, in that each code base can have a narrow set of functions, as well minimized required deployment coordination, as each service can be separately deployed.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-8 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-8 px-5 md:px-12')
         The solution in one particular case I faced was a substantial AWS-hosted monolith that had multiple functions, that were expected to continue to grow, and there were concerns that deployments would impact service levels. In addition, there was a desire to migrate from AWS, so it was a perfect opportunity to launch new microservices at the new provider, whilst integrating API calls and disabling the same service in the monolith. Overtime, the original monolith had been disassembled, with the individual microservices launched at the new cloud provider.
 
       %div(class='flex justify-center mb-6')
-        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200')
+        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200 dark:bg-gray-400')
           Time to completion
-        %div(class='font-bold border bg-white pl-4 md:pr-5 pr-5 py-2')
+        %div(class='font-bold border bg-white dark:bg-gray-200 text-gray-700 pl-4 md:pr-5 pr-5 py-2')
           1-2 months
 
 
@@ -156,21 +155,21 @@
 
   %article(class='bg-purple-50 mb-4 md:mb-0')
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') Leveraging Heroku with devops.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-700') Leveraging Heroku with devops.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         You use Heroku, but don't have a CI/CD platform to automate the deployment process.
 
-      %p(class='font-light text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-light text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         Heroku is an excellent choice for Ruby on Rails application hosting. From its inception, they have focused on Rails applications with a tailored build process that is extremely reliable and comes with great support. It is not the cheapest hosting service, but it makes that up with automated CI/CD deployment tools, and negating the need for dedicated devops and database personnel.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-12 px-5 md:px-12')
         The solution is provided by Heroku through their Review Apps and stage Pipelines, which once configured, provides automated testing, deployment and rollover. In addition, Review Apps provide dedicated exclusive deployments off branch commits for developers, allowing for complete end-to-end testing prior to merging into production. Its a great solution.
 
       %div(class='flex justify-center mb-4')
-        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200')
+        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200 dark:bg-gray-400')
           Time to completion
-        %div(class='font-bold border bg-white pl-4 md:pr-5 pr-5 py-2')
+        %div(class='font-bold border bg-white dark:bg-gray-200 text-gray-700 pl-4 md:pr-5 pr-5 py-2')
           1-2 weeks
 
       %div(class='flex justify-center')
@@ -178,24 +177,24 @@
 
   %article(class='bg-gray-100 mb-4 md:mb-0')
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10') Scraping for data.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-700') Scraping for data.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         Your site could benefit from third-party data where no open API exists.
 
-      %p(class='font-light text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-light text-sm max-w-prose text-slate-800 antialiased mb-6 px-5 md:px-12')
         APIs have exploded in availability in the last 10 years, but many sites still lack accessibility, so web scraping remains an important tool. The challenges are how to implement those tools in way that you can monitor their ongoing operation, as breakage will likely occur, and frequently. Depending on the number of different sites you'll target, this can be a big challenge.
 
-      %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
+      %p(class='font-bold text-sm max-w-prose text-slate-800 antialiased mb-12 px-5 md:px-12')
         In an example situation, we were faced with tracking nearly 200 different websites that required daily scraping. Over time, the scraping component of this monolithic application was overwhelming our instances leading to increase web response times for clients. The solution was to extract the scraping into a microservice, that could easily be scaled up or down, using such tools as ScraperAPI, HTTParty, and Selenium.
 
       %div(class='flex justify-center mb-8')
-        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200')
+        %div(class='font-bold pl-3 md:pl-4 pr-2 border py-2 bg-gray-200 dark:bg-gray-400')
           Time to completion
-        %div(class='font-bold border bg-white pl-4 md:pr-5 pr-5 py-2')
+        %div(class='font-bold border bg-white dark:bg-gray-200 text-gray-700 pl-4 md:pr-5 pr-5 py-2')
           1-2 months
 
-      %div(class='flex justify-center')
+      %div(class='flex justify-center text-gray-900')
         <svg fill="none" stroke="currentColor" stroke-width="1.5" class="w-20 h-20" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15z"/></svg>
         %div(class='mt-2 text-5xl font-bold')
           &#8594

@@ -3,7 +3,7 @@
     %h1(class='text-slate-800 dark:text-slate-100 font-bold tracking-tight mb-10 text-4xl leading-11 md:text-5xl md:leading-13')
       = Setting&.first&.home_headline || 'Home headline'
 
-    %p.text-lg.text-slate-700.max-w-prose.mb-5
+    %p.text-lg.text-slate-700.dark:text-slate-50.max-w-prose.mb-5
       / = render 'summary'
       I've harbored a lifelong enthusiasm for bringing ideas to life. It all started at the age of ten with a roadside candy stand, progressed to selling custom graduation-gift pens during college, and culminated in founding the global bond trading firm DebtTraders. Additionally, I established an investment management firm,
       = succeed(".") do
@@ -16,27 +16,8 @@
       to developing an app for my daughter to sell
       = link_to "slime online", "https://github.com/carsoncole/slime-kangaroo"
       (trying to foster her entreprenurial spirit), to engineering multiple corporate apps.
-    %p.text-lg.text-slate-700.max-w-prose
+    %p.text-lg.text-slate-700.dark:text-slate-50.max-w-prose
       As a seasoned Ruby on Rails full-stack developer, I possess expertise in application design, development, and deployment. Proficient in evaluating both existing and new applications, I thrive in facilitating discussions among stakeholders and playing a pivotal role as a lead engineering contributor in various leadership capacities.
 
   %div.flex.justify-center.lg:justify-end
     = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'rounded-lg md:my-10 md:ml-0 lg:ml-4 rotate-0 lg:rotate-6 h-60 w-60 lg:h-72 lg:w-72 xl:h-80 xl:w-80 shadow-xl dark:shadow-gray-800'
-
-
-/ - if Setting&.first&.status
-/   %div(class="mb-8 flex justify-center")
-/     %div.text-3xl.py-2.font-bold.bg-lime-800.text-center.rounded-lg(class='w-full md:w-1/2')
-/       = link_to work_with_me_path, class: 'text-lime-200 hover:text-white' do
-/         = Setting&.first&.status&.titleize
-/         &#8594
-
-
-
-
-
-
-
-
-
-
-
