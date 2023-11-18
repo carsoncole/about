@@ -4,7 +4,7 @@
 
 @layer base {
   a {
-    @apply text-lime-500 dark:text-lime-200 hover:text-lime-900;
+    @apply text-lime-500 dark:text-lime-400 hover:text-lime-900;
   }
 }
 
