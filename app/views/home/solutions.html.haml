@@ -2,8 +2,29 @@
 %h1(class='text-slate-800 dark:text-slate-100 font-bold tracking-tight mb-10 text-4xl font-display leading-11 md:text-5xl md:leading-13 md:w-4/5')
   Finding application solutions.
 
-%h2(class='font-light tracking-tight max-w-prose text-xl text-slate-700 dark:text-slate-100 mb-20')
+%h2(class='font-light tracking-tight max-w-prose text-xl text-slate-700 dark:text-slate-100 mb-16')
   Example common Ruby on Rails application challenges and the solutions provided.
+
+%div(class="w-1/2 mx-auto mb-8")
+  %div(class="border-t b-2 border-gray-200 dark:border-gray-600")
+
+%nav(class="mb-20 text-center tracking-tight leading-7")
+  %div(class="px-2 inline-flex")
+    = link_to "Upgrading Ruby on Rails", solutions_path(anchor: "upgrading-rails")
+  %div(class="px-2 inline-flex")
+    = link_to "White Labeling a SaaS Offering", solutions_path(anchor: "white-labeling")
+  %div(class="px-2 inline-flex")
+    = link_to "Offering a RESTful API", solutions_path(anchor: "apis")
+  %div(class="px-2 inline-flex")
+    = link_to "Recurring Charges and Billing", solutions_path(anchor: "billing")
+  %div(class="px-2 inline-flex")
+    = link_to "Monolith to Microservice", solutions_path(anchor: "monolith")
+  %div(class="px-2 inline-flex")
+    = link_to "Leveraging Heroku with Devops", solutions_path(anchor: "devops")
+  %div(class="px-2 inline-flex")
+    = link_to "Scraping for Data", solutions_path(anchor: "scraping")
+  %div(class="px-2 inline-flex")
+    = link_to "From Single to Multitenancy", solutions_path(anchor: "multitenancy")
 
 
 %div(class='mb-4')
@@ -62,9 +83,9 @@
         %br
         mydomain.com
 
-  %article(class='bg-gray-900 dark:bg-gray-700 text-white mb-4 md:mb-0' id="apis")
+  %article(class='bg-gray-200 dark:bg-gray-300 text-gray-900 mb-4 md:mb-0' id="apis")
     %div(class='py-16')
-      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-100') Offering a RESTful API.
+      %h1(class='mb-8 text-3xl font-bold tracking-tight text-center px-4 md:px-10 text-slate-900') Offering a RESTful API.
 
       %p(class='font-bold text-sm max-w-prose antialiased mb-6 px-5 md:px-12')
         There is a growing demand from clients for API access to integrate your services into their own systems. This presents a significant opportunity as your service stands to be remarketed by clients, thereby significantly expanding the reach of your offering.
