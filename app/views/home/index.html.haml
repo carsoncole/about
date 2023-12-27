@@ -1,5 +1,5 @@
-%div.lg:grid.lg:grid-cols-3.gap-6
-  %div.col-start-1.col-span-2.mb-10
+%div(class="lg:grid lg:grid-cols-3 gap-6")
+  %div(class="col-start-1 col-span-2 mb-10")
     %h1(class='text-slate-800 dark:text-slate-100 font-bold tracking-tight mb-10 text-4xl leading-11 md:text-5xl md:leading-13')
       = Setting&.first&.home_headline || 'Home headline'
 
@@ -21,5 +21,5 @@
       = link_to "See common application challenges and solutions", solutions_path
       that I've worked on. Proficient in evaluating both existing and new applications, I thrive in facilitating discussions among stakeholders and playing a pivotal role as a lead engineering contributor in various leadership capacities.
 
-  %div.flex.justify-center.lg:justify-end
+  %div(class="flex justify-center lg:justify-end")
     = image_tag "profile_photo.jpeg", alt: 'Carson Cole image', class: 'rounded-lg md:my-10 md:ml-0 lg:ml-4 rotate-0 lg:rotate-6 h-60 w-60 lg:h-72 lg:w-72 xl:h-80 xl:w-80 shadow-xl dark:shadow-gray-800'
